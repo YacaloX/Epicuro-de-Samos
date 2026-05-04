@@ -32,7 +32,7 @@ Diseñada para facilitar el aprendizaje mediante una navegación clara y element
 
 ## 🚀 Cómo usar
 
-1. Abre [Abre la pagina Web](https://yacalox.github.io/epicuro-de-samos/main.html) o descarga el archivo `.html`.
+1. [Abre la pagina Web](https://yacalox.github.io/epicuro-de-samos/main.html) o descarga `main.html`.
 2. Abre `index.html` en cualquier navegador moderno.
 3. No requiere instalación ni dependencias externas (todo se carga desde CDN).
 
