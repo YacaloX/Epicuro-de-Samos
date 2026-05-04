@@ -51,10 +51,6 @@ Diseñada para facilitar el aprendizaje mediante una navegación clara y element
 | FAQ            | Preguntas frecuentes en acordeón |
 | Test           | Quiz interactivo de 5 preguntas con perfil final |
 
-## 📸 Capturas de pantalla
-
-> *(Puedes agregar imágenes de la página en funcionamiento aquí)*
-
 ## 📖 Créditos
 
 - Contenido extraído del documento **Epicuro.pdf** proporcionado para el desarrollo.
