@@ -54,7 +54,7 @@ Diseñada para facilitar el aprendizaje mediante una navegación clara y element
 ## 📖 Créditos
 
 - Contenido extraído del documento **Epicuro.pdf** proporcionado para el desarrollo.
-- Desarrollo web y diseño interactivo a cargo de [tu nombre o equipo].
+- Desarrollo web y diseño interactivo a cargo de Jhoan Sebastián Rojas Martínez.
 
 ## 📄 Licencia
 
