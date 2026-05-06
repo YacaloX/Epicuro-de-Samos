@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <!-- Realizado por Jhoan R. -->
   <title>Epicuro · Filosofía para la felicidad</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +41,6 @@
       background-attachment: fixed;
     }
 
-    /* Textura sutil de papel antiguo */
     body::before {
       content: "";
       position: fixed;
@@ -229,6 +227,33 @@
       margin-bottom: 1rem;
     }
 
+    /* Imágenes placeholder */
+    .img-placeholder {
+      width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      object-fit: cover;
+      background-color: #e9e4db;
+      border: 1px solid rgba(184,155,114,0.25);
+    }
+
+    .img-placeholder-sm {
+      max-width: 200px;
+      height: auto;
+    }
+
+    .img-placeholder-md {
+      max-width: 400px;
+      height: auto;
+    }
+
+    .img-hero {
+      max-width: 180px;
+      margin: 0 auto 1.5rem;
+      display: block;
+    }
+
     /* Flip cards (curiosidades, máximas) */
     .flip-card {
       background: transparent;
@@ -411,6 +436,8 @@
     <!-- Inicio / Hero -->
     <section id="inicio" class="hero">
       <div class="container">
+        <!-- Imagen decorativa: busto o símbolo -->
+        <img src="https://placehold.co/160x160/E8E0D5/6B7B3A?text=Epicuro" alt="Busto de Epicuro" class="img-placeholder img-hero" width="160" height="160">
         <blockquote>«La muerte no es nada para nosotros»</blockquote>
         <p>Epicuro (341–270 a.C.), filósofo griego, fundó el Jardín y enseñó que la felicidad se alcanza mediante la comprensión del placer y la eliminación de los temores.</p>
         <a href="#curiosidades" class="btn"><i class="fas fa-seedling"></i> Explorar el Jardín</a>
@@ -422,15 +449,20 @@
     <section id="epicuro">
       <div class="container">
         <h2><i class="fas fa-user-graduate"></i> ¿Quién fue Epicuro?</h2>
-        <div class="card-grid">
-          <div class="card"><i class="fas fa-map-pin"></i><h3>Origen</h3><p>Nació en la isla de Samos (341 a.C.) y desarrolló su actividad en Atenas.</p></div>
-          <div class="card"><i class="fas fa-tree"></i><h3>El Jardín</h3><p>Fundó una escuela inclusiva que admitía hombres, mujeres y personas de distintas condiciones sociales.</p></div>
-          <div class="card"><i class="fas fa-heartbeat"></i><h3>Aponía</h3><p>Ausencia de dolor físico como primer componente del bienestar.</p></div>
-          <div class="card"><i class="fas fa-water"></i><h3>Ataraxia</h3><p>Tranquilidad del alma, libre de temores irracionales.</p></div>
+        <!-- Imagen del busto de Epicuro (más grande) -->
+        <div style="display:flex; gap:2rem; align-items:center; flex-wrap:wrap;">
+          <img src="https://placehold.co/250x300/EAE3D5/6B7B3A?text=Busto+de+Epicuro" alt="Representación de Epicuro" class="img-placeholder img-placeholder-sm" width="250" height="300">
+          <div style="flex:1; min-width:250px;">
+            <p>Nació en la isla de Samos en el 341 a.C. y desarrolló su actividad intelectual en Atenas, donde fundó “El Jardín”. Su escuela se distinguió por admitir a hombres, mujeres y personas de toda condición social.</p>
+            <p>El objetivo de la vida es alcanzar la <strong>aponía</strong> (ausencia de dolor físico) y la <strong>ataraxia</strong> (tranquilidad del alma), mediante la moderación y la eliminación de temores irracionales.</p>
+          </div>
         </div>
-        <p style="margin-top:2rem; font-style:italic; background:var(--beige-claro); padding:1.2rem; border-radius:20px;">
-          “El placer es el principio y el fin de la vida feliz” — Epicuro entendía el placer como equilibrio, no exceso.
-        </p>
+        <div class="card-grid" style="margin-top:2rem;">
+          <div class="card"><i class="fas fa-map-pin"></i><h3>Origen</h3><p>Nació en Samos (341 a.C.) y filosofó en Atenas.</p></div>
+          <div class="card"><i class="fas fa-tree"></i><h3>El Jardín</h3><p>Escuela inclusiva, abierta a todos sin distinción.</p></div>
+          <div class="card"><i class="fas fa-heartbeat"></i><h3>Aponía</h3><p>Ausencia de dolor físico.</p></div>
+          <div class="card"><i class="fas fa-water"></i><h3>Ataraxia</h3><p>Tranquilidad del alma, libre de miedos.</p></div>
+        </div>
       </div>
     </section>
 
@@ -439,14 +471,15 @@
       <div class="container">
         <h2><i class="fas fa-globe-americas"></i> Contexto histórico</h2>
         <p>Epicuro vivió durante el <strong>período helenístico</strong>, iniciado tras la muerte de Alejandro Magno (323 a.C.). Las polis griegas se debilitaron y la filosofía se orientó hacia la felicidad individual.</p>
+        <!-- Imagen de mapa o esquema -->
+        <img src="https://placehold.co/600x250/D4CFC4/6B7B3A?text=Mapa+del+mundo+helenístico" alt="Mapa del mundo helenístico" class="img-placeholder" style="max-width:100%; margin:1.5rem 0;">
         <div class="timeline">
           <div class="timeline-item"><strong>323 a.C.</strong><br>Muerte de Alejandro Magno</div>
           <div class="timeline-item"><strong>341 a.C.</strong><br>Nacimiento de Epicuro</div>
           <div class="timeline-item"><strong>306 a.C.</strong><br>Fundación del Jardín</div>
           <div class="timeline-item"><strong>270 a.C.</strong><br>Muerte de Epicuro</div>
-          <div class="timeline-item"><strong>s. I a.C.</strong><br>Lucrecio difunde el epicureísmo en Roma</div>
+          <div class="timeline-item"><strong>s. I a.C.</strong><br>Lucrecio difunde el epicureísmo</div>
         </div>
-        <p style="margin-top:1rem;"><i class="fas fa-lightbulb" style="color:var(--terracota);"></i> Las escuelas helenísticas (estoicismo, epicureísmo, escepticismo) buscaban la felicidad práctica, alejándose de la metafísica abstracta.</p>
       </div>
     </section>
 
@@ -455,27 +488,25 @@
       <div class="container">
         <h2><i class="fas fa-book-open"></i> Obras principales</h2>
         <div class="card-grid">
-          <!-- Carta a Meneceo -->
           <div class="card">
+            <img src="https://placehold.co/300x150/E8E0D5/6B7B3A?text=Carta+a+Meneceo" alt="Pergamino Carta a Meneceo" class="img-placeholder">
             <h3>Carta a Meneceo</h3>
             <p><strong>Ética.</strong> La muerte no debe temerse. El placer es el fin; clasificación de los deseos.</p>
-            <p><em>Deseos: naturales y necesarios, naturales no necesarios, ni naturales ni necesarios.</em></p>
             <a href="#juego-deseos" class="btn" style="margin-top:0.5rem;">Jugar a clasificar</a>
           </div>
-          <!-- Carta a Heródoto -->
           <div class="card">
+            <img src="https://placehold.co/300x150/E8E0D5/6B7B3A?text=Carta+a+Heródoto" alt="Pergamino Carta a Heródoto" class="img-placeholder">
             <h3>Carta a Heródoto</h3>
-            <p><strong>Física.</strong> Teoría atomista: todo está compuesto de átomos y vacío. El universo es infinito.</p>
-            <p>Los dioses existen pero no intervienen en asuntos humanos.</p>
+            <p><strong>Física.</strong> Todo está compuesto de átomos y vacío. Universo infinito; dioses no intervienen.</p>
           </div>
-          <!-- Máximas Capitales -->
           <div class="card">
+            <img src="https://placehold.co/300x150/E8E0D5/6B7B3A?text=Máximas+Capitales" alt="Tabla con máximas" class="img-placeholder">
             <h3>Máximas Capitales</h3>
-            <p>Sentencias breves: el placer es el bien supremo, la prudencia es indispensable y la amistad es el mayor bien.</p>
+            <p>Sentencias breves: placer supremo, prudencia y amistad como mayor bien.</p>
           </div>
         </div>
 
-        <!-- Juego de deseos (Carta a Meneceo) -->
+        <!-- Juego de deseos -->
         <div id="juego-deseos" style="margin-top:3rem;">
           <h3 style="font-family:var(--fuente-titulos); margin-bottom:0.5rem;">🧩 Clasifica los deseos según Epicuro</h3>
           <p>Arrastra cada deseo a la categoría que corresponde.</p>
@@ -486,18 +517,9 @@
             <div class="draggable" draggable="true" id="item4" data-correct="natural-necesario">Abrigo para el frío</div>
           </div>
           <div class="drag-container">
-            <div class="drop-zone" data-accept="natural-necesario">
-              <h4>Naturales y necesarios</h4>
-              <p>(para la vida y la tranquilidad)</p>
-            </div>
-            <div class="drop-zone" data-accept="natural-no-necesario">
-              <h4>Naturales pero no necesarios</h4>
-              <p>(variaciones que no eliminan el dolor esencial)</p>
-            </div>
-            <div class="drop-zone" data-accept="no-natural">
-              <h4>Ni naturales ni necesarios</h4>
-              <p>(nacen de la vana opinión)</p>
-            </div>
+            <div class="drop-zone" data-accept="natural-necesario"><h4>Naturales y necesarios</h4></div>
+            <div class="drop-zone" data-accept="natural-no-necesario"><h4>Naturales pero no necesarios</h4></div>
+            <div class="drop-zone" data-accept="no-natural"><h4>Ni naturales ni necesarios</h4></div>
           </div>
           <button id="verificar-deseos" class="btn"><i class="fas fa-check"></i> Verificar clasificación</button>
           <p id="feedback-deseos" style="margin-top:0.8rem; font-weight:600;"></p>
@@ -532,6 +554,8 @@
     <section id="curiosidades" style="background:rgba(184,155,114,0.06);">
       <div class="container">
         <h2><i class="fas fa-feather-alt"></i> Datos curiosos – El Jardín Secreto</h2>
+        <!-- Imagen evocadora del Jardín -->
+        <img src="https://placehold.co/500x200/C5BFAF/6B7B3A?text=El+Jardín+de+Epicuro" alt="Ilustración del Jardín de Epicuro" class="img-placeholder" style="max-width:100%; margin-bottom:1.5rem;">
         <div class="card-grid">
           <div class="flip-card" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-inner">
@@ -573,10 +597,10 @@
         <h2><i class="fas fa-comments"></i> Preguntas frecuentes</h2>
         <div class="faq">
           <details><summary>¿Por qué Epicuro dice que la muerte no es nada para nosotros?</summary><p>Porque mientras vivimos, la muerte no está presente; cuando ocurre, dejamos de existir y no hay sensación alguna.</p></details>
-          <details><summary>¿Buscar el placer no conduce al desenfreno?</summary><p>No en el epicureísmo: el placer supremo es la ausencia de dolor (aponía) y la serenidad del alma (ataraxia), no el exceso.</p></details>
-          <details><summary>¿Qué diferencia hay entre aponía y ataraxia?</summary><p>Aponía es la ausencia de dolor físico; ataraxia, la tranquilidad mental libre de miedos.</p></details>
-          <details><summary>¿Epicuro era ateo?</summary><p>No. Creía que los dioses existen, pero son indiferentes a los asuntos humanos y no debemos temerles.</p></details>
-          <details><summary>¿Por qué la amistad era tan importante?</summary><p>Porque brinda seguridad y apoyo; Epicuro la consideraba el mayor bien que la sabiduría procura para la felicidad.</p></details>
+          <details><summary>¿Buscar el placer no conduce al desenfreno?</summary><p>No en el epicureísmo: el placer supremo es la ausencia de dolor (aponía) y la serenidad del alma (ataraxia).</p></details>
+          <details><summary>¿Qué diferencia hay entre aponía y ataraxia?</summary><p>Aponía: ausencia de dolor físico. Ataraxia: tranquilidad mental.</p></details>
+          <details><summary>¿Epicuro era ateo?</summary><p>No. Creía que los dioses existen, pero no intervienen en asuntos humanos.</p></details>
+          <details><summary>¿Por qué la amistad era tan importante?</summary><p>Brinda seguridad y apoyo; Epicuro la consideraba el mayor bien que la sabiduría ofrece.</p></details>
         </div>
       </div>
     </section>
@@ -595,12 +619,12 @@
   </main>
 
   <footer>
-    <p>🌱 Jardín filosófico · Hecho por Jhoan Rojas y Salomé Cardenas · 8º 2026 GDEP</p>
+    <p>🌱 Jardín filosófico · Contenido basado en fuentes clásicas epicúreas</p>
   </footer>
 
   <script>
     (function() {
-      // Smooth scroll para enlaces internos
+      // Smooth scroll
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
@@ -644,7 +668,6 @@
         });
       });
 
-      // Permitir soltar en el contenedor general también (para devolver)
       const itemsContainer = document.getElementById('items-container');
       itemsContainer.addEventListener('dragover', e => e.preventDefault());
       itemsContainer.addEventListener('drop', e => {
@@ -656,7 +679,6 @@
         }
       });
 
-      // Verificar clasificación
       document.getElementById('verificar-deseos').addEventListener('click', () => {
         let correctos = 0;
         let total = draggables.length;
@@ -677,33 +699,13 @@
         }
       });
 
-      // Quiz lógica
+      // Quiz
       const preguntas = [
-        { 
-          pregunta: "Según Epicuro, la muerte...",
-          opciones: ["Es un paso a otra vida", "Debe ser temida por su misterio", "No es nada para nosotros porque no podemos experimentarla", "Es el fin de toda felicidad"],
-          correcta: 2
-        },
-        {
-          pregunta: "El placer epicúreo se define mejor como:",
-          opciones: ["Indulgencia en todos los deseos", "Ausencia de dolor y perturbación", "Riqueza y poder", "Placeres intensos pero breves"],
-          correcta: 1
-        },
-        {
-          pregunta: "¿Qué son la aponía y la ataraxia?",
-          opciones: ["Dos dioses griegos", "Ausencia de dolor físico y tranquilidad del alma", "Tipos de deseos naturales", "Métodos de estudio"],
-          correcta: 1
-        },
-        {
-          pregunta: "¿Cómo consideraba Epicuro a los dioses?",
-          opciones: ["Inexistentes", "Seres que castigan a los humanos", "Existen pero no intervienen en asuntos humanos", "Hay que adorarlos para ser felices"],
-          correcta: 2
-        },
-        {
-          pregunta: "El mayor bien que procura la sabiduría según Epicuro es:",
-          opciones: ["La riqueza", "La salud", "La amistad", "El conocimiento"],
-          correcta: 2
-        }
+        { pregunta: "Según Epicuro, la muerte...", opciones: ["Es un paso a otra vida", "Debe ser temida por su misterio", "No es nada para nosotros porque no podemos experimentarla", "Es el fin de toda felicidad"], correcta: 2 },
+        { pregunta: "El placer epicúreo se define mejor como:", opciones: ["Indulgencia en todos los deseos", "Ausencia de dolor y perturbación", "Riqueza y poder", "Placeres intensos pero breves"], correcta: 1 },
+        { pregunta: "¿Qué son la aponía y la ataraxia?", opciones: ["Dos dioses griegos", "Ausencia de dolor físico y tranquilidad del alma", "Tipos de deseos naturales", "Métodos de estudio"], correcta: 1 },
+        { pregunta: "¿Cómo consideraba Epicuro a los dioses?", opciones: ["Inexistentes", "Seres que castigan a los humanos", "Existen pero no intervienen en asuntos humanos", "Hay que adorarlos para ser felices"], correcta: 2 },
+        { pregunta: "El mayor bien que procura la sabiduría según Epicuro es:", opciones: ["La riqueza", "La salud", "La amistad", "El conocimiento"], correcta: 2 }
       ];
 
       let preguntaActual = 0;
@@ -713,10 +715,7 @@
       const resultadoFinal = document.getElementById('resultado-final');
 
       function mostrarPregunta(indice) {
-        if(indice >= preguntas.length) {
-          mostrarResultado();
-          return;
-        }
+        if(indice >= preguntas.length) { mostrarResultado(); return; }
         const q = preguntas[indice];
         let html = `<p class="quiz-question">${indice+1}. ${q.pregunta}</p>`;
         q.opciones.forEach((op, i) => {
@@ -724,16 +723,10 @@
         });
         preguntaContainer.innerHTML = html;
         siguienteBtn.style.display = 'inline-block';
-        if(indice === preguntas.length-1) siguienteBtn.textContent = 'Ver resultado';
-        else siguienteBtn.textContent = 'Siguiente pregunta';
-        
-        // listener para radio
+        siguienteBtn.textContent = (indice === preguntas.length-1) ? 'Ver resultado' : 'Siguiente pregunta';
         document.querySelectorAll('input[name="quiz"]').forEach(radio => {
-          radio.addEventListener('change', (e) => {
-            respuestasUsuario[indice] = parseInt(e.target.value);
-          });
+          radio.addEventListener('change', (e) => { respuestasUsuario[indice] = parseInt(e.target.value); });
         });
-        // Si ya respondió, mantener selección
         if(respuestasUsuario[indice] !== null) {
           const radio = document.querySelector(`input[name="quiz"][value="${respuestasUsuario[indice]}"]`);
           if(radio) radio.checked = true;
@@ -742,14 +735,8 @@
 
       function mostrarResultado() {
         let aciertos = 0;
-        preguntas.forEach((q, idx) => {
-          if(respuestasUsuario[idx] === q.correcta) aciertos++;
-        });
-        let perfil = '';
-        if(aciertos === 5) perfil = '🏛️ Sabio del Jardín: dominas la filosofía epicúrea.';
-        else if(aciertos >= 3) perfil = '🍃 En busca de la ataraxia: vas por buen camino.';
-        else perfil = '🤔 Hedonista confundido: repasa las enseñanzas de Epicuro.';
-        
+        preguntas.forEach((q, idx) => { if(respuestasUsuario[idx] === q.correcta) aciertos++; });
+        let perfil = aciertos === 5 ? '🏛️ Sabio del Jardín' : (aciertos >= 3 ? '🍃 En busca de la ataraxia' : '🤔 Hedonista confundido');
         preguntaContainer.innerHTML = '';
         siguienteBtn.style.display = 'none';
         resultadoFinal.style.display = 'block';
@@ -757,23 +744,15 @@
       }
 
       siguienteBtn.addEventListener('click', () => {
-        // Validar que haya seleccionado algo
         const seleccionado = document.querySelector('input[name="quiz"]:checked');
-        if(!seleccionado) {
-          alert('Por favor selecciona una opción antes de continuar.');
-          return;
-        }
+        if(!seleccionado) { alert('Por favor selecciona una opción.'); return; }
         respuestasUsuario[preguntaActual] = parseInt(seleccionado.value);
         preguntaActual++;
         mostrarPregunta(preguntaActual);
       });
 
-      // Iniciar quiz
       mostrarPregunta(0);
-
-      // Reiniciar quiz al cambiar sección? No necesario.
     })();
   </script>
 </body>
 </html>
-<!-- Realizado por Jhoan R. -->
