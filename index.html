@@ -302,6 +302,12 @@
             border-color: var(--terracota);
         }
 
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -608,12 +614,6 @@
             color: var(--terracota);
             text-decoration: underline;
         }
-
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
     </style>
 </head>
 <body>
@@ -640,13 +640,7 @@
     <main>
         <section id="inicio" class="hero">
             <div class="container">
-                <!-- Imagen decorativa generada con SVG mientras no exista el archivo real -->
-                <svg class="img-placeholder img-hero" width="180" height="180" viewBox="0 0 180 180" aria-label="Busto de Epicuro">
-                    <rect width="180" height="180" fill="var(--color-img-bg)" rx="90"/>
-                    <circle cx="90" cy="70" r="35" fill="var(--dorado-viejo)" opacity="0.7"/>
-                    <path d="M55 140 Q90 100 125 140" stroke="var(--dorado-viejo)" stroke-width="8" fill="none" opacity="0.7"/>
-                    <text x="90" y="170" text-anchor="middle" fill="var(--texto-secundario)" font-size="14">Epicuro</text>
-                </svg>
+                <img src="img/busto-hero.png" alt="Busto de Epicuro" class="img-placeholder img-hero" width="240" height="240">
                 <blockquote>«La muerte no es nada para nosotros»</blockquote>
                 <p>Epicuro (341–270 a.C.), filósofo griego, fundó el Jardín y enseñó que la felicidad se alcanza mediante la comprensión del placer y la eliminación de los temores.</p>
                 <a href="#curiosidades" class="btn"><i class="fas fa-seedling"></i> Explorar el Jardín</a>
@@ -658,11 +652,7 @@
             <div class="container">
                 <h2><i class="fas fa-user-graduate"></i> ¿Quién fue Epicuro?</h2>
                 <div style="display:flex; gap:2rem; align-items:center; flex-wrap:wrap;">
-                    <svg class="img-placeholder img-placeholder-sm" width="200" height="240" viewBox="0 0 200 240" aria-label="Representación de Epicuro">
-                        <rect width="200" height="240" fill="var(--color-img-bg)" rx="12"/>
-                        <circle cx="100" cy="80" r="45" fill="var(--dorado-viejo)" opacity="0.6"/>
-                        <path d="M60 180 Q100 120 140 180" stroke="var(--dorado-viejo)" stroke-width="10" fill="none" opacity="0.6"/>
-                    </svg>
+                    <img src="img/busto-bio.png" alt="Representación de Epicuro" class="img-placeholder img-placeholder-sm" width="250" height="300">
                     <div style="flex:1; min-width:250px;">
                         <p>Nació en la isla de Samos en el 341 a.C. y desarrolló su actividad intelectual en Atenas, donde fundó "El Jardín". Su escuela se distinguió por admitir a hombres, mujeres y personas de toda condición social.</p>
                         <p>El objetivo de la vida es alcanzar la <strong>aponía</strong> (ausencia de dolor físico) y la <strong>ataraxia</strong> (tranquilidad del alma), mediante la moderación y la eliminación de temores irracionales.</p>
@@ -681,10 +671,7 @@
             <div class="container">
                 <h2><i class="fas fa-globe-americas"></i> Contexto histórico</h2>
                 <p>Epicuro vivió durante el <strong>período helenístico</strong>, iniciado tras la muerte de Alejandro Magno (323 a.C.). Las polis griegas se debilitaron y la filosofía se orientó hacia la felicidad individual.</p>
-                <svg class="img-placeholder" width="100%" height="200" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid slice" aria-label="Mapa del mundo helenístico">
-                    <rect width="800" height="200" fill="var(--color-img-bg)" rx="12"/>
-                    <text x="400" y="110" text-anchor="middle" fill="var(--texto-secundario)" font-size="20">🗺️ Mapa del mundo helenístico</text>
-                </svg>
+                <img src="img/mapa.png" alt="Mapa del mundo helenístico" class="img-placeholder" style="max-width:100%; margin:1.5rem 0;">
                 <div class="timeline">
                     <div class="timeline-item"><strong>323 a.C.</strong><br>Muerte de Alejandro Magno</div>
                     <div class="timeline-item"><strong>341 a.C.</strong><br>Nacimiento de Epicuro</div>
@@ -700,27 +687,18 @@
                 <h2><i class="fas fa-book-open"></i> Obras principales</h2>
                 <div class="card-grid">
                     <div class="card">
-                        <svg class="img-placeholder" width="100%" height="140" viewBox="0 0 300 140" preserveAspectRatio="xMidYMid slice" aria-label="Pergamino Carta a Meneceo">
-                            <rect width="300" height="140" fill="var(--color-img-bg)" rx="8"/>
-                            <text x="150" y="80" text-anchor="middle" fill="var(--texto-secundario)" font-size="18">📜 Carta a Meneceo</text>
-                        </svg>
+                        <img src="img/carta-meneceo.png" alt="Pergamino Carta a Meneceo" class="img-placeholder">
                         <h3><a href="https://archive.org/details/Carta_a_Meneceu" target="_blank" rel="noopener">Carta a Meneceo</a></h3>
                         <p><strong>Ética.</strong> La muerte no debe temerse. El placer es el fin; clasificación de los deseos.</p>
                         <a href="#juego-deseos" class="btn" style="margin-top:0.5rem;">Jugar a clasificar</a>
                     </div>
                     <div class="card">
-                        <svg class="img-placeholder" width="100%" height="140" viewBox="0 0 300 140" preserveAspectRatio="xMidYMid slice" aria-label="Pergamino Carta a Heródoto">
-                            <rect width="300" height="140" fill="var(--color-img-bg)" rx="8"/>
-                            <text x="150" y="80" text-anchor="middle" fill="var(--texto-secundario)" font-size="18">📜 Carta a Heródoto</text>
-                        </svg>
+                        <img src="img/carta-herodoto.png" alt="Pergamino Carta a Heródoto" class="img-placeholder">
                         <h3><a href="https://github.com/YacaloX/Epicuro-de-Samos/blob/main/pdf/carta-a-herodoto.pdf" target="_blank" rel="noopener">Carta a Heródoto</a></h3>
                         <p><strong>Física.</strong> Todo está compuesto de átomos y vacío. Universo infinito; dioses no intervienen.</p>
                     </div>
                     <div class="card">
-                        <svg class="img-placeholder" width="100%" height="140" viewBox="0 0 300 140" preserveAspectRatio="xMidYMid slice" aria-label="Tabla con máximas">
-                            <rect width="300" height="140" fill="var(--color-img-bg)" rx="8"/>
-                            <text x="150" y="80" text-anchor="middle" fill="var(--texto-secundario)" font-size="18">📋 Máximas Capitales</text>
-                        </svg>
+                        <img src="img/tabla-piedra.png" alt="Tabla con máximas" class="img-placeholder">
                         <h3><a href="https://www.eventos.cch.unam.mx/olimpiada/files/Maximas.pdf" target="_blank" rel="noopener">Máximas Capitales</a></h3>
                         <p>Sentencias breves: placer supremo, prudencia y amistad como mayor bien.</p>
                     </div>
@@ -771,10 +749,7 @@
         <section id="curiosidades" style="background:var(--color-curiosidades-bg);">
             <div class="container">
                 <h2><i class="fas fa-feather-alt"></i> Datos curiosos – El Jardín Secreto</h2>
-                <svg class="img-placeholder" width="100%" height="200" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid slice" aria-label="Ilustración del Jardín de Epicuro">
-                    <rect width="800" height="200" fill="var(--color-img-bg)" rx="12"/>
-                    <text x="400" y="110" text-anchor="middle" fill="var(--texto-secundario)" font-size="20">🌳 El Jardín de Epicuro</text>
-                </svg>
+                <img src="img/jardin.png" alt="Ilustración del Jardín de Epicuro" class="img-placeholder" style="max-width:100%; margin-bottom:1.5rem;">
                 <div class="card-grid">
                     <div class="flip-card" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner">
