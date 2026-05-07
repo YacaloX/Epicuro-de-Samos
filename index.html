@@ -1,1028 +1,987 @@
 <!DOCTYPE html>
-<!-- Hecho UNICAMENTE por Jhoan Rojas -->
 <html lang="es" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Epicuro · Filosofía para la felicidad</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (free CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Epicuro · Filosofía para la felicidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    :root {
-      --fondo: #FDFBF7;
-      --texto: #2E2E2E;
-      --texto-secundario: #4a4a4a;
-      --verde-oliva: #6B7B3A;
-      --terracota: #C26A4A;
-      --dorado-viejo: #B89B72;
-      --beige-claro: #F5F0E8;
-      --sombra-suave: 0 8px 20px rgba(0,0,0,0.05);
-      --sombra-media: 0 15px 30px rgba(0,0,0,0.08);
-      --sombra-ligera: 0 2px 8px rgba(0,0,0,0.05);
-      --sombra-imagen: 0 4px 12px rgba(0,0,0,0.08);
-      --borde-redondo: 16px;
-      --fuente-titulos: 'Lora', 'Merriweather', Georgia, serif;
-      --fuente-texto: 'Open Sans', 'Lato', system-ui, sans-serif;
-      --transicion: all 0.25s ease;
-      --color-card-bg: #ffffff;
-      --color-card-border: rgba(184,155,114,0.12);
-      --color-nav-bg: rgba(253, 251, 247, 0.92);
-      --color-nav-border: rgba(184,155,114,0.25);
-      --color-footer-texto: #7f7f7f;
-      --color-footer-borde: rgba(184,155,114,0.2);
-      --color-faq-bg: #ffffff;
-      --color-dropzone-bg: rgba(245,240,232,0.7);
-      --color-dropzone-dragover: rgba(107,123,58,0.1);
-      --color-timeline-bg: #ffffff;
-      --color-img-bg: #e9e4db;
-      --color-img-border: rgba(184,155,114,0.25);
-      --color-hero-gradient: linear-gradient(180deg, rgba(107,123,58,0.06) 0%, transparent 70%);
-      --color-contexto-bg: rgba(245,240,232,0.4);
-      --color-curiosidades-bg: rgba(184,155,114,0.06);
-      --color-test-bg: linear-gradient(0deg, rgba(107,123,58,0.05) 0%, transparent 70%);
-      --color-scrollbar-track: #f0ece4;
-      --color-scrollbar-thumb: #c4b99a;
-      --color-flip-back-texto: #3d3d3d;
-      --color-input-bg: #ffffff;
-      --color-input-texto: #2E2E2E;
-    }
+        :root {
+            --fondo: #FDFBF7;
+            --texto: #2E2E2E;
+            --texto-secundario: #4a4a4a;
+            --verde-oliva: #6B7B3A;
+            --terracota: #C26A4A;
+            --dorado-viejo: #B89B72;
+            --beige-claro: #F5F0E8;
+            --sombra-suave: 0 8px 20px rgba(0, 0, 0, 0.05);
+            --sombra-media: 0 15px 30px rgba(0, 0, 0, 0.08);
+            --sombra-ligera: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --sombra-imagen: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --borde-redondo: 16px;
+            --fuente-titulos: 'Lora', 'Merriweather', Georgia, serif;
+            --fuente-texto: 'Open Sans', 'Lato', system-ui, sans-serif;
+            --transicion: all 0.25s ease;
+            --color-card-bg: #ffffff;
+            --color-card-border: rgba(184, 155, 114, 0.12);
+            --color-nav-bg: rgba(253, 251, 247, 0.92);
+            --color-nav-border: rgba(184, 155, 114, 0.25);
+            --color-footer-texto: #7f7f7f;
+            --color-footer-borde: rgba(184, 155, 114, 0.2);
+            --color-faq-bg: #ffffff;
+            --color-dropzone-bg: rgba(245, 240, 232, 0.7);
+            --color-dropzone-dragover: rgba(107, 123, 58, 0.1);
+            --color-timeline-bg: #ffffff;
+            --color-img-bg: #e9e4db;
+            --color-img-border: rgba(184, 155, 114, 0.25);
+            --color-hero-gradient: linear-gradient(180deg, rgba(107, 123, 58, 0.06) 0%, transparent 70%);
+            --color-contexto-bg: rgba(245, 240, 232, 0.4);
+            --color-curiosidades-bg: rgba(184, 155, 114, 0.06);
+            --color-test-bg: linear-gradient(0deg, rgba(107, 123, 58, 0.05) 0%, transparent 70%);
+            --color-scrollbar-track: #f0ece4;
+            --color-scrollbar-thumb: #c4b99a;
+            --color-flip-back-texto: #3d3d3d;
+            --color-input-bg: #ffffff;
+            --color-input-texto: #2E2E2E;
+        }
 
-    /* Modo oscuro */
-    [data-theme="dark"] {
-      --fondo: #1a1a1a;
-      --texto: #e4e4e4;
-      --texto-secundario: #c5c5c5;
-      --verde-oliva: #8fa84a;
-      --terracota: #d4856a;
-      --dorado-viejo: #c9a87c;
-      --beige-claro: #2a2722;
-      --sombra-suave: 0 8px 20px rgba(0,0,0,0.25);
-      --sombra-media: 0 15px 30px rgba(0,0,0,0.3);
-      --sombra-ligera: 0 2px 8px rgba(0,0,0,0.2);
-      --sombra-imagen: 0 4px 12px rgba(0,0,0,0.3);
-      --color-card-bg: #252525;
-      --color-card-border: rgba(184,155,114,0.18);
-      --color-nav-bg: rgba(26, 26, 26, 0.94);
-      --color-nav-border: rgba(184,155,114,0.3);
-      --color-footer-texto: #a0a0a0;
-      --color-footer-borde: rgba(184,155,114,0.25);
-      --color-faq-bg: #252525;
-      --color-dropzone-bg: rgba(42, 39, 34, 0.7);
-      --color-dropzone-dragover: rgba(143, 168, 74, 0.15);
-      --color-timeline-bg: #252525;
-      --color-img-bg: #2e2b26;
-      --color-img-border: rgba(184,155,114,0.3);
-      --color-hero-gradient: linear-gradient(180deg, rgba(143,168,74,0.08) 0%, transparent 70%);
-      --color-contexto-bg: rgba(42, 39, 34, 0.5);
-      --color-curiosidades-bg: rgba(184,155,114,0.08);
-      --color-test-bg: linear-gradient(0deg, rgba(143,168,74,0.07) 0%, transparent 70%);
-      --color-scrollbar-track: #2a2a2a;
-      --color-scrollbar-thumb: #5a5040;
-      --color-flip-back-texto: #d0d0d0;
-      --color-input-bg: #2a2a2a;
-      --color-input-texto: #e4e4e4;
-    }
+        [data-theme="dark"] {
+            --fondo: #1a1a1a;
+            --texto: #e4e4e4;
+            --texto-secundario: #c5c5c5;
+            --verde-oliva: #8fa84a;
+            --terracota: #d4856a;
+            --dorado-viejo: #c9a87c;
+            --beige-claro: #2a2722;
+            --sombra-suave: 0 8px 20px rgba(0, 0, 0, 0.25);
+            --sombra-media: 0 15px 30px rgba(0, 0, 0, 0.3);
+            --sombra-ligera: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --sombra-imagen: 0 4px 12px rgba(0, 0, 0, 0.3);
+            --color-card-bg: #252525;
+            --color-card-border: rgba(184, 155, 114, 0.18);
+            --color-nav-bg: rgba(26, 26, 26, 0.94);
+            --color-nav-border: rgba(184, 155, 114, 0.3);
+            --color-footer-texto: #a0a0a0;
+            --color-footer-borde: rgba(184, 155, 114, 0.25);
+            --color-faq-bg: #252525;
+            --color-dropzone-bg: rgba(42, 39, 34, 0.7);
+            --color-dropzone-dragover: rgba(143, 168, 74, 0.15);
+            --color-timeline-bg: #252525;
+            --color-img-bg: #2e2b26;
+            --color-img-border: rgba(184, 155, 114, 0.3);
+            --color-hero-gradient: linear-gradient(180deg, rgba(143, 168, 74, 0.08) 0%, transparent 70%);
+            --color-contexto-bg: rgba(42, 39, 34, 0.5);
+            --color-curiosidades-bg: rgba(184, 155, 114, 0.08);
+            --color-test-bg: linear-gradient(0deg, rgba(143, 168, 74, 0.07) 0%, transparent 70%);
+            --color-scrollbar-track: #2a2a2a;
+            --color-scrollbar-thumb: #5a5040;
+            --color-flip-back-texto: #d0d0d0;
+            --color-input-bg: #2a2a2a;
+            --color-input-texto: #e4e4e4;
+        }
 
-    body {
-      background-color: var(--fondo);
-      color: var(--texto);
-      font-family: var(--fuente-texto);
-      line-height: 1.6;
-      font-weight: 400;
-      background-image: radial-gradient(circle at 20% 30%, rgba(184,155,114,0.08) 0%, transparent 35%);
-      background-attachment: fixed;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
+        body {
+            background-color: var(--fondo);
+            color: var(--texto);
+            font-family: var(--fuente-texto);
+            line-height: 1.6;
+            font-weight: 400;
+            background-image: radial-gradient(circle at 20% 30%, rgba(184, 155, 114, 0.08) 0%, transparent 35%);
+            background-attachment: fixed;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.03"/></svg>');
-      pointer-events: none;
-      z-index: -1;
-    }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.03"/></svg>');
+            pointer-events: none;
+            z-index: -1;
+        }
 
-    h1, h2, h3 {
-      font-family: var(--fuente-titulos);
-      font-weight: 600;
-      letter-spacing: -0.3px;
-      color: var(--texto);
-      transition: color 0.4s ease;
-    }
+        h1,
+        h2,
+        h3 {
+            font-family: var(--fuente-titulos);
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            color: var(--texto);
+            transition: color 0.4s ease;
+        }
 
-    h2 {
-      font-size: 2.1rem;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      border-bottom: 2px solid var(--dorado-viejo);
-      padding-bottom: 0.5rem;
-      transition: border-color 0.4s ease;
-    }
+        h2 {
+            font-size: 2.1rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 2px solid var(--dorado-viejo);
+            padding-bottom: 0.5rem;
+            transition: border-color 0.4s ease;
+        }
 
-    h2 i {
-      color: var(--terracota);
-      font-size: 1.8rem;
-      transition: color 0.4s ease;
-    }
+        h2 i {
+            color: var(--terracota);
+            font-size: 1.8rem;
+            transition: color 0.4s ease;
+        }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-    /* Navegación fija */
-    .navbar {
-      background-color: var(--color-nav-bg);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 2px 15px rgba(0,0,0,0.04);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid var(--color-nav-border);
-      transition: background-color 0.4s ease, border-color 0.4s ease;
-    }
+        .navbar {
+            background-color: var(--color-nav-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--color-nav-border);
+            transition: background-color 0.4s ease, border-color 0.4s ease;
+        }
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.8rem 2rem;
-      flex-wrap: wrap;
-    }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+            flex-wrap: wrap;
+        }
 
-    .logo {
-      font-family: var(--fuente-titulos);
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: var(--verde-oliva);
-      letter-spacing: -0.5px;
-      transition: color 0.4s ease;
-    }
+        .logo {
+            font-family: var(--fuente-titulos);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--verde-oliva);
+            letter-spacing: -0.5px;
+            transition: color 0.4s ease;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 1.8rem;
-      list-style: none;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
 
-    .nav-links a {
-      text-decoration: none;
-      color: var(--texto);
-      font-weight: 500;
-      font-size: 1rem;
-      transition: var(--transicion), color 0.4s ease;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 3px;
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--texto);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transicion), color 0.4s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 3px;
+        }
 
-    .nav-links a:hover {
-      color: var(--terracota);
-      border-bottom-color: var(--terracota);
-    }
+        .nav-links a:hover {
+            color: var(--terracota);
+            border-bottom-color: var(--terracota);
+        }
 
-    /* Botón de tema */
-    .theme-toggle {
-      background: none;
-      border: 2px solid var(--dorado-viejo);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transicion), border-color 0.4s ease, background-color 0.4s ease, color 0.4s ease;
-      color: var(--texto);
-      background-color: var(--color-card-bg);
-      flex-shrink: 0;
-      box-shadow: var(--sombra-ligera);
-    }
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--dorado-viejo);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transicion), border-color 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+            color: var(--texto);
+            background-color: var(--color-card-bg);
+            flex-shrink: 0;
+            box-shadow: var(--sombra-ligera);
+        }
 
-    .theme-toggle:hover {
-      border-color: var(--terracota);
-      color: var(--terracota);
-      transform: rotate(20deg);
-    }
+        .theme-toggle:hover {
+            border-color: var(--terracota);
+            color: var(--terracota);
+            transform: rotate(20deg);
+        }
 
-    .theme-toggle:active {
-      transform: rotate(40deg) scale(0.9);
-    }
+        .theme-toggle:active {
+            transform: rotate(40deg) scale(0.9);
+        }
 
-    /* Secciones generales */
-    section {
-      padding: 3rem 0;
-      scroll-margin-top: 5rem;
-      transition: background 0.4s ease;
-    }
+        section {
+            padding: 3rem 0;
+            scroll-margin-top: 5rem;
+            transition: background 0.4s ease;
+        }
 
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem 2.5rem;
-      background: var(--color-hero-gradient);
-      border-radius: 0 0 60px 60px;
-      margin-bottom: 1rem;
-      transition: background 0.4s ease;
-    }
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem 2.5rem;
+            background: var(--color-hero-gradient);
+            border-radius: 0 0 60px 60px;
+            margin-bottom: 1rem;
+            transition: background 0.4s ease;
+        }
 
-    .hero blockquote {
-      font-family: var(--fuente-titulos);
-      font-size: 2.5rem;
-      font-style: italic;
-      color: var(--terracota);
-      margin: 0.5rem 0 1rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards;
-      transition: color 0.4s ease;
-    }
+        .hero blockquote {
+            font-family: var(--fuente-titulos);
+            font-size: 2.5rem;
+            font-style: italic;
+            color: var(--terracota);
+            margin: 0.5rem 0 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+            transition: color 0.4s ease;
+        }
 
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      color: var(--texto-secundario);
-      transition: color 0.4s ease;
-    }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: var(--texto-secundario);
+            transition: color 0.4s ease;
+        }
 
-    .btn {
-      background: var(--verde-oliva);
-      color: white;
-      border: none;
-      padding: 0.75rem 2rem;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.2s, background-color 0.4s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-decoration: none;
-    }
+        .btn {
+            background: var(--verde-oliva);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s, background-color 0.4s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+        }
 
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--terracota);
-      color: var(--terracota);
-      margin-left: 1rem;
-      transition: 0.2s, border-color 0.4s ease, color 0.4s ease;
-    }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--terracota);
+            color: var(--terracota);
+            margin-left: 1rem;
+            transition: 0.2s, border-color 0.4s ease, color 0.4s ease;
+        }
 
-    .btn:hover {
-      background: var(--terracota);
-    }
-    .btn-outline:hover {
-      background: var(--terracota);
-      color: white;
-      border-color: var(--terracota);
-    }
+        .btn:hover {
+            background: var(--terracota);
+        }
+        .btn-outline:hover {
+            background: var(--terracota);
+            color: white;
+            border-color: var(--terracota);
+        }
 
-    /* Tarjetas */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.8rem;
-      margin-top: 2rem;
-    }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
 
-    .card {
-      background: var(--color-card-bg);
-      border-radius: var(--borde-redondo);
-      padding: 1.8rem 1.5rem;
-      box-shadow: var(--sombra-suave);
-      transition: transform 0.3s, box-shadow 0.3s, background-color 0.4s ease;
-      border: 1px solid var(--color-card-border);
-    }
+        .card {
+            background: var(--color-card-bg);
+            border-radius: var(--borde-redondo);
+            padding: 1.8rem 1.5rem;
+            box-shadow: var(--sombra-suave);
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.4s ease;
+            border: 1px solid var(--color-card-border);
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--sombra-media);
-    }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-media);
+        }
 
-    .card i {
-      font-size: 2.2rem;
-      color: var(--verde-oliva);
-      margin-bottom: 1rem;
-      transition: color 0.4s ease;
-    }
+        .card i {
+            font-size: 2.2rem;
+            color: var(--verde-oliva);
+            margin-bottom: 1rem;
+            transition: color 0.4s ease;
+        }
 
-    .card h3 {
-      transition: color 0.4s ease;
-    }
+        .card h3 {
+            transition: color 0.4s ease;
+        }
 
-    .card p {
-      color: var(--texto-secundario);
-      transition: color 0.4s ease;
-    }
+        .card p {
+            color: var(--texto-secundario);
+            transition: color 0.4s ease;
+        }
 
-    /* Imágenes placeholder */
-    .img-placeholder {
-      width: 100%;
-      border-radius: 12px;
-      margin: 1rem 0;
-      box-shadow: var(--sombra-imagen);
-      object-fit: cover;
-      background-color: var(--color-img-bg);
-      border: 1px solid var(--color-img-border);
-      transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-    }
+        .img-placeholder {
+            width: 100%;
+            border-radius: 12px;
+            margin: 1rem 0;
+            box-shadow: var(--sombra-imagen);
+            object-fit: cover;
+            background-color: var(--color-img-bg);
+            border: 1px solid var(--color-img-border);
+            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
 
-    .img-placeholder-sm {
-      max-width: 200px;
-      height: auto;
-    }
+        .img-placeholder-sm {
+            max-width: 200px;
+            height: auto;
+        }
 
-    .img-placeholder-md {
-      max-width: 400px;
-      height: auto;
-    }
+        .img-placeholder-md {
+            max-width: 400px;
+            height: auto;
+        }
 
-    .img-hero {
-      max-width: 180px;
-      margin: 0 auto 1.5rem;
-      display: block;
-    }
+        .img-hero {
+            max-width: 180px;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
 
-    /* Flip cards (curiosidades, máximas) */
-    .flip-card {
-      background: transparent;
-      height: 240px;
-      perspective: 1000px;
-      cursor: pointer;
-    }
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-    }
-    .flip-card.flipped .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-    .flip-card-front, .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: var(--borde-redondo);
-      box-shadow: var(--sombra-suave);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1.2rem;
-      text-align: center;
-      background: var(--color-card-bg);
-      border: 1px solid var(--color-card-border);
-      transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-    }
-    .flip-card-back {
-      background: var(--beige-claro);
-      transform: rotateY(180deg);
-      justify-content: flex-start;
-      overflow-y: auto;
-      color: var(--color-flip-back-texto);
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
+        .flip-card {
+            background: transparent;
+            height: 240px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: var(--borde-redondo);
+            box-shadow: var(--sombra-suave);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem;
+            text-align: center;
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-card-border);
+            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .flip-card-back {
+            background: var(--beige-claro);
+            transform: rotateY(180deg);
+            justify-content: flex-start;
+            overflow-y: auto;
+            color: var(--color-flip-back-texto);
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
 
-    /* Línea de tiempo */
-    .timeline {
-      display: flex;
-      overflow-x: auto;
-      gap: 2rem;
-      padding: 1.5rem 0.5rem;
-      scroll-snap-type: x mandatory;
-    }
-    .timeline::-webkit-scrollbar {
-      height: 6px;
-    }
-    .timeline::-webkit-scrollbar-track {
-      background: var(--color-scrollbar-track);
-      border-radius: 3px;
-    }
-    .timeline::-webkit-scrollbar-thumb {
-      background: var(--color-scrollbar-thumb);
-      border-radius: 3px;
-    }
+        .timeline {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding: 1.5rem 0.5rem;
+            scroll-snap-type: x mandatory;
+        }
+        .timeline::-webkit-scrollbar {
+            height: 6px;
+        }
+        .timeline::-webkit-scrollbar-track {
+            background: var(--color-scrollbar-track);
+            border-radius: 3px;
+        }
+        .timeline::-webkit-scrollbar-thumb {
+            background: var(--color-scrollbar-thumb);
+            border-radius: 3px;
+        }
 
-    .timeline-item {
-      min-width: 150px;
-      text-align: center;
-      scroll-snap-align: center;
-      background: var(--color-timeline-bg);
-      padding: 1.2rem 1rem;
-      border-radius: 20px;
-      box-shadow: var(--sombra-suave);
-      position: relative;
-      transition: background-color 0.4s ease, box-shadow 0.4s ease;
-    }
-    .timeline-item::after {
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      background: var(--terracota);
-      border-radius: 50%;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: background-color 0.4s ease;
-    }
+        .timeline-item {
+            min-width: 150px;
+            text-align: center;
+            scroll-snap-align: center;
+            background: var(--color-timeline-bg);
+            padding: 1.2rem 1rem;
+            border-radius: 20px;
+            box-shadow: var(--sombra-suave);
+            position: relative;
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--terracota);
+            border-radius: 50%;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: background-color 0.4s ease;
+        }
 
-    /* Juego de arrastrar deseos */
-    .drag-container {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin: 2rem 0;
-    }
-    .drop-zone {
-      flex: 1;
-      min-width: 180px;
-      background: var(--color-dropzone-bg);
-      border: 2px dashed var(--dorado-viejo);
-      border-radius: 20px;
-      padding: 1rem;
-      text-align: center;
-      transition: 0.2s, background-color 0.4s ease, border-color 0.4s ease;
-    }
-    .drop-zone.drag-over {
-      background: var(--color-dropzone-dragover);
-      border-color: var(--verde-oliva);
-    }
-    .draggable {
-      background: var(--color-card-bg);
-      padding: 0.7rem 1rem;
-      margin: 0.5rem;
-      border-radius: 30px;
-      box-shadow: var(--sombra-ligera);
-      cursor: grab;
-      display: inline-block;
-      user-select: none;
-      font-size: 0.9rem;
-      border: 1px solid var(--dorado-viejo);
-      color: var(--texto);
-      transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
-    }
-    .draggable:active { cursor: grabbing; }
+        .drag-container {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .drop-zone {
+            flex: 1;
+            min-width: 180px;
+            background: var(--color-dropzone-bg);
+            border: 2px dashed var(--dorado-viejo);
+            border-radius: 20px;
+            padding: 1rem;
+            text-align: center;
+            transition: 0.2s, background-color 0.4s ease, border-color 0.4s ease;
+        }
+        .drop-zone.drag-over {
+            background: var(--color-dropzone-dragover);
+            border-color: var(--verde-oliva);
+        }
+        .draggable {
+            background: var(--color-card-bg);
+            padding: 0.7rem 1rem;
+            margin: 0.5rem;
+            border-radius: 30px;
+            box-shadow: var(--sombra-ligera);
+            cursor: grab;
+            display: inline-block;
+            user-select: none;
+            font-size: 0.9rem;
+            border: 1px solid var(--dorado-viejo);
+            color: var(--texto);
+            transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .draggable:active {
+            cursor: grabbing;
+        }
 
-    /* Quiz */
-    .quiz-box {
-      background: var(--color-card-bg);
-      border-radius: 24px;
-      padding: 2rem;
-      box-shadow: var(--sombra-suave);
-      transition: background-color 0.4s ease, box-shadow 0.4s ease;
-    }
-    .quiz-question {
-      font-weight: 600;
-      margin: 1.2rem 0 0.6rem;
-      color: var(--texto);
-      transition: color 0.4s ease;
-    }
-    .quiz-option {
-      display: block;
-      margin: 0.4rem 0;
-      cursor: pointer;
-      color: var(--texto-secundario);
-      transition: color 0.4s ease;
-    }
-    .quiz-option input[type="radio"] {
-      accent-color: var(--terracota);
-    }
-    .resultado {
-      font-size: 1.2rem;
-      background: var(--beige-claro);
-      padding: 1rem;
-      border-radius: 12px;
-      margin-top: 1.5rem;
-      transition: background-color 0.4s ease;
-    }
+        .quiz-box {
+            background: var(--color-card-bg);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--sombra-suave);
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .quiz-question {
+            font-weight: 600;
+            margin: 1.2rem 0 0.6rem;
+            color: var(--texto);
+            transition: color 0.4s ease;
+        }
+        .quiz-option {
+            display: block;
+            margin: 0.4rem 0;
+            cursor: pointer;
+            color: var(--texto-secundario);
+            transition: color 0.4s ease;
+        }
+        .quiz-option input[type="radio"] {
+            accent-color: var(--terracota);
+        }
+        .resultado {
+            font-size: 1.2rem;
+            background: var(--beige-claro);
+            padding: 1rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            transition: background-color 0.4s ease;
+        }
 
-    /* FAQ acordeón */
-    .faq details {
-      background: var(--color-faq-bg);
-      margin: 0.8rem 0;
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      box-shadow: var(--sombra-suave);
-      transition: background-color 0.4s ease, box-shadow 0.4s ease;
-    }
-    .faq summary {
-      font-weight: 600;
-      cursor: pointer;
-      color: var(--texto);
-      transition: color 0.4s ease;
-    }
-    .faq details p {
-      color: var(--texto-secundario);
-      transition: color 0.4s ease;
-    }
+        .faq details {
+            background: var(--color-faq-bg);
+            margin: 0.8rem 0;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--sombra-suave);
+            transition: background-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .faq summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--texto);
+            transition: color 0.4s ease;
+        }
+        .faq details p {
+            color: var(--texto-secundario);
+            transition: color 0.4s ease;
+        }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--color-footer-texto);
-      border-top: 1px solid var(--color-footer-borde);
-      margin-top: 2rem;
-      transition: color 0.4s ease, border-color 0.4s ease;
-    }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--color-footer-texto);
+            border-top: 1px solid var(--color-footer-borde);
+            margin-top: 2rem;
+            transition: color 0.4s ease, border-color 0.4s ease;
+        }
 
-    /* Estilos para el texto general */
-    p {
-      color: var(--texto-secundario);
-      transition: color 0.4s ease;
-    }
+        p {
+            color: var(--texto-secundario);
+            transition: color 0.4s ease;
+        }
 
-    strong {
-      color: var(--texto);
-      transition: color 0.4s ease;
-    }
+        strong {
+            color: var(--texto);
+            transition: color 0.4s ease;
+        }
 
-    .drop-zone h4 {
-      color: var(--texto);
-      transition: color 0.4s ease;
-    }
+        .drop-zone h4 {
+            color: var(--texto);
+            transition: color 0.4s ease;
+        }
 
-    #feedback-deseos {
-      transition: color 0.4s ease;
-    }
+        #feedback-deseos {
+            transition: color 0.4s ease;
+        }
 
-    @media (max-width: 700px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-      h2 {
-        font-size: 1.8rem;
-      }
-      .theme-toggle {
-        position: absolute;
-        top: 0.8rem;
-        right: 1rem;
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-      }
+        @media (max-width: 700px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .theme-toggle {
+                position: absolute;
+                top: 0.8rem;
+                right: 1rem;
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+        }
 
-      @keyframes shake {
-        0% { transform: translate(1px, 1px) rotate(0deg); }
-        25% { transform: translate(-2px, 2px) rotate(-1deg); }
-        50% { transform: translate(2px, -1px) rotate(1deg); }
-        75% { transform: translate(-1px, 2px) rotate(0deg); }
-        100% { transform: translate(0, 0) rotate(0deg); }
-      }
-
-      .temblor {
-        animation: shake 0.3s;
-      }
-
-      .error-text {
-        color: #C26A4A;
-        font-weight: bold;
-      }
-    }
-
-    .theme-toggle:focus-visible {
-      outline: 3px solid var(--terracota);
-      outline-offset: 3px;
-      border-radius: 50%;
-    }
-  </style>
+        .theme-toggle:focus-visible {
+            outline: 3px solid var(--terracota);
+            outline-offset: 3px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">🌿 Epicuro</div>
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#epicuro">Epicuro</a></li>
-        <li><a href="#contexto">Contexto</a></li>
-        <li><a href="#obras">Obras</a></li>
-        <li><a href="#curiosidades">Curiosidades</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#test">Test</a></li>
-        <li>
-          <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo oscuro / claro" title="Alternar modo oscuro">
-            <i class="fas fa-moon" id="themeIcon"></i>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <main>
-    <!-- Inicio / Hero -->
-    <section id="inicio" class="hero">
-      <div class="container">
-        <img src="img/busto-hero.png" alt="Busto de Epicuro" class="img-placeholder img-hero" width="240" height="240">
-        <blockquote>«La muerte no es nada para nosotros»</blockquote>
-        <p>Epicuro (341–270 a.C.), filósofo griego, fundó el Jardín y enseñó que la felicidad se alcanza mediante la comprensión del placer y la eliminación de los temores.</p>
-        <a href="#curiosidades" class="btn"><i class="fas fa-seedling"></i> Explorar el Jardín</a>
-        <a href="#test" class="btn btn-outline"><i class="fas fa-question-circle"></i> Pon a prueba tus ideas</a>
-      </div>
-    </section>
-<!-- Salomé Cardenas NO HIZO NADA -->
-    <!-- Epicuro -->
-    <section id="epicuro">
-      <div class="container">
-        <h2><i class="fas fa-user-graduate"></i> ¿Quién fue Epicuro?</h2>
-        <div style="display:flex; gap:2rem; align-items:center; flex-wrap:wrap;">
-          <img src="img/busto-bio.png" alt="Representación de Epicuro" class="img-placeholder img-placeholder-sm" width="250" height="300">
-          <div style="flex:1; min-width:250px;">
-            <p>Nació en la isla de Samos en el 341 a.C. y desarrolló su actividad intelectual en Atenas, donde fundó “El Jardín”. Su escuela se distinguió por admitir a hombres, mujeres y personas de toda condición social.</p>
-            <p>El objetivo de la vida es alcanzar la <strong>aponía</strong> (ausencia de dolor físico) y la <strong>ataraxia</strong> (tranquilidad del alma), mediante la moderación y la eliminación de temores irracionales.</p>
-          </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🌿 Epicuro</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#epicuro">Epicuro</a></li>
+                <li><a href="#contexto">Contexto</a></li>
+                <li><a href="#obras">Obras</a></li>
+                <li><a href="#curiosidades">Curiosidades</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#test">Test</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo oscuro / claro" title="Alternar modo oscuro">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                </li>
+            </ul>
         </div>
-        <div class="card-grid" style="margin-top:2rem;">
-          <div class="card"><i class="fas fa-map-pin"></i><h3>Origen</h3><p>Nació en Samos (341 a.C.) y filosofó en Atenas.</p></div>
-          <div class="card"><i class="fas fa-tree"></i><h3>El Jardín</h3><p>Escuela inclusiva, abierta a todos sin distinción.</p></div>
-          <div class="card"><i class="fas fa-heartbeat"></i><h3>Aponía</h3><p>Ausencia de dolor físico.</p></div>
-          <div class="card"><i class="fas fa-water"></i><h3>Ataraxia</h3><p>Tranquilidad del alma, libre de miedos.</p></div>
-        </div>
-      </div>
-    </section>
+    </nav>
 
-    <!-- Contexto histórico -->
-    <section id="contexto" style="background:var(--color-contexto-bg);">
-      <div class="container">
-        <h2><i class="fas fa-globe-americas"></i> Contexto histórico</h2>
-        <p>Epicuro vivió durante el <strong>período helenístico</strong>, iniciado tras la muerte de Alejandro Magno (323 a.C.). Las polis griegas se debilitaron y la filosofía se orientó hacia la felicidad individual.</p>
-        <img src="img/mapa.png" alt="Mapa del mundo helenístico" class="img-placeholder" style="max-width:100%; margin:1.5rem 0;">
-        <div class="timeline">
-          <div class="timeline-item"><strong>323 a.C.</strong><br>Muerte de Alejandro Magno</div>
-          <div class="timeline-item"><strong>341 a.C.</strong><br>Nacimiento de Epicuro</div>
-          <div class="timeline-item"><strong>306 a.C.</strong><br>Fundación del Jardín</div>
-          <div class="timeline-item"><strong>270 a.C.</strong><br>Muerte de Epicuro</div>
-          <div class="timeline-item"><strong>s. I a.C.</strong><br>Lucrecio difunde el epicureísmo</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Obras principales -->
-    <section id="obras">
-      <div class="container">
-        <h2><i class="fas fa-book-open"></i> Obras principales</h2>
-        <div class="card-grid">
-          <div class="card">
-            <img src="img/carta-meneceo.png" alt="Pergamino Carta a Meneceo" class="img-placeholder">
-            <h3><a href="archive.org/details/Carta_a_Meneceu">Carta a Meneceo</a></h3>
-            <p><strong>Ética.</strong> La muerte no debe temerse. El placer es el fin; clasificación de los deseos.</p>
-            <a href="#juego-deseos" class="btn" style="margin-top:0.5rem;">Jugar a clasificar</a>
-          </div>
-          <div class="card">
-            <img src="img/carta-herodoto.png" alt="Pergamino Carta a Heródoto" class="img-placeholder">
-            <h3><a href="github.com/YacaloX/Epicuro-de-Samos/blob/main/pdf/Carta%20a%20Her%C3%B3todo.pdf">Carta a Herótodo</a></h3>
-            <p><strong>Física.</strong> Todo está compuesto de átomos y vacío. Universo infinito; dioses no intervienen.</p>
-          </div>
-          <div class="card">
-            <img src="img/tabla-piedra.png" alt="Tabla con máximas" class="img-placeholder">
-            <h3><a href="https://www.eventos.cch.unam.mx/olimpiada/files/Maximas.pdf">Máximas Capitales</a></h3>
-            <p>Sentencias breves: placer supremo, prudencia y amistad como mayor bien.</p>
-          </div>
-        </div>
-
-        <!-- Juego de deseos -->
-        <div id="juego-deseos" style="margin-top:3rem;">
-          <h3 style="font-family:var(--fuente-titulos); margin-bottom:0.5rem; color: var(--texto); transition: color 0.4s ease;">🧩 Clasifica los deseos según Epicuro</h3>
-          <p>Arrastra cada deseo a la categoría que corresponde.</p>
-          <div id="items-container" style="margin:1rem 0; display:flex; flex-wrap:wrap; gap:0.5rem;">
-            <div class="draggable" draggable="true" id="item1" data-correct="natural-necesario">Comer pan y beber agua</div>
-            <div class="draggable" draggable="true" id="item2" data-correct="natural-no-necesario">Comer manjares exóticos</div>
-            <div class="draggable" draggable="true" id="item3" data-correct="no-natural">Buscar fama y poder</div>
-            <div class="draggable" draggable="true" id="item4" data-correct="natural-necesario">Abrigo para el frío</div>
-          </div>
-          <div class="drag-container">
-            <div class="drop-zone" data-accept="natural-necesario"><h4>Naturales y necesarios</h4></div>
-            <div class="drop-zone" data-accept="natural-no-necesario"><h4>Naturales pero no necesarios</h4></div>
-            <div class="drop-zone" data-accept="no-natural"><h4>Ni naturales ni necesarios</h4></div>
-          </div>
-          <button id="verificar-deseos" class="btn"><i class="fas fa-check"></i> Verificar clasificación</button>
-          <p id="feedback-deseos" style="margin-top:0.8rem; font-weight:600;"></p>
-        </div>
-
-        <!-- Máximas capitales flip cards -->
-        <h3 style="margin-top:3rem; color: var(--texto); transition: color 0.4s ease;">📜 Máximas Capitales (toca para leer)</h3>
-        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px,1fr));">
-          <div class="flip-card" onclick="this.classList.toggle('flipped')">
-            <div class="flip-card-inner">
-              <div class="flip-card-front"><i class="fas fa-smile"></i> El placer es el bien supremo</div>
-              <div class="flip-card-back">La vida feliz requiere moderación; el placer <span id="trigger-verdad">verdadero</span> es ausencia de dolor.</div>
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <img src="img/busto-hero.png" alt="Busto de Epicuro" class="img-placeholder img-hero" width="240" height="240">
+                <blockquote>«La muerte no es nada para nosotros»</blockquote>
+                <p>Epicuro (341–270 a.C.), filósofo griego, fundó el Jardín y enseñó que la felicidad se alcanza mediante la comprensión del placer y la eliminación de los temores.</p>
+                <a href="#curiosidades" class="btn"><i class="fas fa-seedling"></i> Explorar el Jardín</a>
+                <a href="#test" class="btn btn-outline"><i class="fas fa-question-circle"></i> Pon a prueba tus ideas</a>
             </div>
-          </div>
-          <div class="flip-card" onclick="this.classList.toggle('flipped')">
-            <div class="flip-card-inner">
-              <div class="flip-card-front"><i class="fas fa-balance-scale"></i> La prudencia es indispensable</div>
-              <div class="flip-card-back">Elegir bien los placeres evita sufrimientos futuros.</div>
+        </section>
+
+        <section id="epicuro">
+            <div class="container">
+                <h2><i class="fas fa-user-graduate"></i> ¿Quién fue Epicuro?</h2>
+                <div style="display:flex; gap:2rem; align-items:center; flex-wrap:wrap;">
+                    <img src="img/busto-bio.png" alt="Representación de Epicuro" class="img-placeholder img-placeholder-sm" width="250" height="300">
+                    <div style="flex:1; min-width:250px;">
+                        <p>Nació en la isla de Samos en el 341 a.C. y desarrolló su actividad intelectual en Atenas, donde fundó "El Jardín". Su escuela se distinguió por admitir a hombres, mujeres y personas de toda condición social.</p>
+                        <p>El objetivo de la vida es alcanzar la <strong>aponía</strong> (ausencia de dolor físico) y la <strong>ataraxia</strong> (tranquilidad del alma), mediante la moderación y la eliminación de temores irracionales.</p>
+                    </div>
+                </div>
+                <div class="card-grid" style="margin-top:2rem;">
+                    <div class="card"><i class="fas fa-map-pin"></i><h3>Origen</h3><p>Nació en Samos (341 a.C.) y filosofó en Atenas.</p></div>
+                    <div class="card"><i class="fas fa-tree"></i><h3>El Jardín</h3><p>Escuela inclusiva, abierta a todos sin distinción.</p></div>
+                    <div class="card"><i class="fas fa-heartbeat"></i><h3>Aponía</h3><p>Ausencia de dolor físico.</p></div>
+                    <div class="card"><i class="fas fa-water"></i><h3>Ataraxia</h3><p>Tranquilidad del alma, libre de miedos.</p></div>
+                </div>
             </div>
-          </div>
-          <div class="flip-card" onclick="this.classList.toggle('flipped')">
-            <div class="flip-card-inner">
-              <div class="flip-card-front"><i class="fas fa-users"></i> La amistad, el mayor bien</div>
-              <div class="flip-card-back">Proporciona seguridad, apoyo y bienestar emocional.</div>
+        </section>
+
+        <section id="contexto" style="background:var(--color-contexto-bg);">
+            <div class="container">
+                <h2><i class="fas fa-globe-americas"></i> Contexto histórico</h2>
+                <p>Epicuro vivió durante el <strong>período helenístico</strong>, iniciado tras la muerte de Alejandro Magno (323 a.C.). Las polis griegas se debilitaron y la filosofía se orientó hacia la felicidad individual.</p>
+                <img src="img/mapa.png" alt="Mapa del mundo helenístico" class="img-placeholder" style="max-width:100%; margin:1.5rem 0;">
+                <div class="timeline">
+                    <div class="timeline-item"><strong>323 a.C.</strong><br>Muerte de Alejandro Magno</div>
+                    <div class="timeline-item"><strong>341 a.C.</strong><br>Nacimiento de Epicuro</div>
+                    <div class="timeline-item"><strong>306 a.C.</strong><br>Fundación del Jardín</div>
+                    <div class="timeline-item"><strong>270 a.C.</strong><br>Muerte de Epicuro</div>
+                    <div class="timeline-item"><strong>s. I a.C.</strong><br>Lucrecio difunde el epicureísmo</div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-<!-- ME TOCÓ A MI HACERLO TODO -->
-    <!-- Curiosidades -->
-    <section id="curiosidades" style="background:var(--color-curiosidades-bg);">
-      <div class="container">
-        <h2><i class="fas fa-feather-alt"></i> Datos curiosos – El Jardín Secreto</h2>
-        <img src="img/jardin.png" alt="Ilustración del Jardín de Epicuro" class="img-placeholder" style="max-width:100%; margin-bottom:1.5rem;">
-        <div class="card-grid">
-          <div class="flip-card" onclick="this.classList.toggle('flipped')">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">🌿 Escuela inclusiva</div>
-              <div class="flip-card-back">Mujeres, esclavos y personas de toda condición eran bienvenidos en El Jardín.</div>
+        </section>
+
+        <section id="obras">
+            <div class="container">
+                <h2><i class="fas fa-book-open"></i> Obras principales</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <img src="img/carta-meneceo.png" alt="Pergamino Carta a Meneceo" class="img-placeholder">
+                        <h3><a href="github.com/YacaloX/Epicuro-de-Samos/blob/main/pdf/Carta%20a%20Her%C3%B3todo.pdf">Carta a Meneceo</a></h3>
+                        <p><strong>Ética.</strong> La muerte no debe temerse. El placer es el fin; clasificación de los deseos.</p>
+                        <a href="#juego-deseos" class="btn" style="margin-top:0.5rem;">Jugar a clasificar</a>
+                    </div>
+                    <div class="card">
+                        <img src="img/carta-herodoto.png" alt="Pergamino Carta a Heródoto" class="img-placeholder">
+                        <h3><a href="archive.org/details/Carta_a_Meneceu">Carta a Herótodo</a></h3>
+                        <p><strong>Física.</strong> Todo está compuesto de átomos y vacío. Universo infinito; dioses no intervienen.</p>
+                    </div>
+                    <div class="card">
+                        <img src="img/tabla-piedra.png" alt="Tabla con máximas" class="img-placeholder">
+                        <h3><a href="https://www.eventos.cch.unam.mx/olimpiada/files/Maximas.pdf">Máximas Capitales</a></h3>
+                        <p>Sentencias breves: placer supremo, prudencia y amistad como mayor bien.</p>
+                    </div>
+                </div>
+
+                <div id="juego-deseos" style="margin-top:3rem;">
+                    <h3 style="font-family:var(--fuente-titulos); margin-bottom:0.5rem; color: var(--texto); transition: color 0.4s ease;">🧩 Clasifica los deseos según Epicuro</h3>
+                    <p>Arrastra cada deseo a la categoría que corresponde.</p>
+                    <div id="items-container" style="margin:1rem 0; display:flex; flex-wrap:wrap; gap:0.5rem;">
+                        <div class="draggable" draggable="true" id="item1" data-correct="natural-necesario">Comer pan y beber agua</div>
+                        <div class="draggable" draggable="true" id="item2" data-correct="natural-no-necesario">Comer manjares exóticos</div>
+                        <div class="draggable" draggable="true" id="item3" data-correct="no-natural">Buscar fama y poder</div>
+                        <div class="draggable" draggable="true" id="item4" data-correct="natural-necesario">Abrigo para el frío</div>
+                    </div>
+                    <div class="drag-container">
+                        <div class="drop-zone" data-accept="natural-necesario"><h4>Naturales y necesarios</h4></div>
+                        <div class="drop-zone" data-accept="natural-no-necesario"><h4>Naturales pero no necesarios</h4></div>
+                        <div class="drop-zone" data-accept="no-natural"><h4>Ni naturales ni necesarios</h4></div>
+                    </div>
+                    <button id="verificar-deseos" class="btn"><i class="fas fa-check"></i> Verificar clasificación</button>
+                    <p id="feedback-deseos" style="margin-top:0.8rem; font-weight:600;"></p>
+                </div>
+
+                <h3 style="margin-top:3rem; color: var(--texto); transition: color 0.4s ease;">📜 Máximas Capitales (toca para leer)</h3>
+                <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px,1fr));">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front"><i class="fas fa-smile"></i> El placer es el bien supremo</div>
+                            <div class="flip-card-back">La vida feliz requiere moderación; el placer <span>verdadero</span> es ausencia de dolor.</div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front"><i class="fas fa-balance-scale"></i> La prudencia es indispensable</div>
+                            <div class="flip-card-back">Elegir bien los placeres evita sufrimientos futuros.</div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front"><i class="fas fa-users"></i> La amistad, el mayor bien</div>
+                            <div class="flip-card-back">Proporciona seguridad, apoyo y bienestar emocional.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="flip-card" onclick="this.classList.toggle('flipped')">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">🍞 Vida austera</div>
-              <div class="flip-card-back">Epicuro comía principalmente pan, agua y aceitunas; su placer no era el lujo.</div>
+        </section>
+
+        <section id="curiosidades" style="background:var(--color-curiosidades-bg);">
+            <div class="container">
+                <h2><i class="fas fa-feather-alt"></i> Datos curiosos – El Jardín Secreto</h2>
+                <img src="img/jardin.png" alt="Ilustración del Jardín de Epicuro" class="img-placeholder" style="max-width:100%; margin-bottom:1.5rem;">
+                <div class="card-grid">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">🌿 Escuela inclusiva</div>
+                            <div class="flip-card-back">Mujeres, esclavos y personas de toda condición eran bienvenidos en El Jardín.</div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">🍞 Vida austera</div>
+                            <div class="flip-card-back">Epicuro comía principalmente pan, agua y aceitunas; su placer no era el lujo.</div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">😈 Malinterpretado</div>
+                            <div class="flip-card-back">Se le acusó de hedonismo extremo, pero defendía la moderación.</div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">📖 Influencia romana</div>
+                            <div class="flip-card-back">El poeta Lucrecio llevó el epicureísmo a Roma con <em>De rerum natura</em>.</div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">🧠 Psicología antigua</div>
+                            <div class="flip-card-back">Su enfoque en eliminar miedos anticipa el bienestar emocional moderno.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="flip-card" onclick="this.classList.toggle('flipped')">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">😈 Malinterpretado</div>
-              <div class="flip-card-back">Se le acusó de hedonismo extremo, pero defendía la moderación.</div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2><i class="fas fa-comments"></i> Preguntas frecuentes</h2>
+                <div class="faq">
+                    <details><summary>¿Por qué Epicuro dice que la muerte no es nada para nosotros?</summary><p>Porque mientras vivimos, la muerte no está presente; cuando ocurre, dejamos de existir y no hay sensación alguna.</p></details>
+                    <details><summary>¿Buscar el placer no conduce al desenfreno?</summary><p>No en el epicureísmo: el placer supremo es la ausencia de dolor (aponía) y la serenidad del alma (ataraxia).</p></details>
+                    <details><summary>¿Qué diferencia hay entre aponía y ataraxia?</summary><p>Aponía: ausencia de dolor físico. Ataraxia: tranquilidad mental.</p></details>
+                    <details><summary>¿Epicuro era ateo?</summary><p>No. Creía que los dioses existen, pero no intervienen en asuntos humanos.</p></details>
+                    <details><summary>¿Por qué la amistad era tan importante?</summary><p>Brinda seguridad y apoyo; Epicuro la consideraba el mayor bien que la sabiduría ofrece.</p></details>
+                </div>
             </div>
-          </div>
-          <div class="flip-card" onclick="this.classList.toggle('flipped')">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">📖 Influencia romana</div>
-              <div class="flip-card-back">El poeta Lucrecio llevó el epicureísmo a Roma con <em>De rerum natura</em>.</div>
+        </section>
+
+        <section id="test" style="background: var(--color-test-bg);">
+            <div class="container">
+                <h2><i class="fas fa-brain"></i> Test: ¿Qué tan epicúreo eres?</h2>
+                <div class="quiz-box" id="quiz">
+                    <div id="pregunta-container"></div>
+                    <button id="siguiente-btn" class="btn" style="display:none;">Siguiente pregunta</button>
+                    <div id="resultado-final" class="resultado" style="display:none;"></div>
+                </div>
             </div>
-          </div>
-          <div class="flip-card" onclick="this.classList.toggle('flipped')">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">🧠 Psicología antigua</div>
-              <div class="flip-card-back">Su enfoque en eliminar miedos anticipa el bienestar emocional moderno.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="container">
-        <h2><i class="fas fa-comments"></i> Preguntas frecuentes</h2>
-        <div class="faq">
-          <details><summary>¿Por qué Epicuro dice que la muerte no es nada para nosotros?</summary><p>Porque mientras vivimos, la muerte no está presente; cuando ocurre, dejamos de existir y no hay sensación alguna.</p></details>
-          <details><summary>¿Buscar el placer no conduce al desenfreno?</summary><p>No en el epicureísmo: el placer supremo es la ausencia de dolor (aponía) y la serenidad del alma (ataraxia).</p></details>
-          <details><summary>¿Qué diferencia hay entre aponía y ataraxia?</summary><p>Aponía: ausencia de dolor físico. Ataraxia: tranquilidad mental.</p></details>
-          <details><summary>¿Epicuro era ateo?</summary><p>No. Creía que los dioses existen, pero no intervienen en asuntos humanos.</p></details>
-          <details><summary>¿Por qué la amistad era tan importante?</summary><p>Brinda seguridad y apoyo; Epicuro la consideraba el mayor bien que la sabiduría ofrece.</p></details>
-        </div>
-      </div>
-    </section>
+    <footer>
+        <p>🌱 Jardín filosófico · Hecho por Jhoan R. y Salomé C. · 8º GDEP 2026</p>
+    </footer>
 
-    <!-- Test interactivo -->
-    <section id="test" style="background: var(--color-test-bg);">
-      <div class="container">
-        <h2><i class="fas fa-brain"></i> Test: ¿Qué tan epicúreo eres?</h2>
-        <div class="quiz-box" id="quiz">
-          <div id="pregunta-container"></div>
-          <button id="siguiente-btn" class="btn" style="display:none;">Siguiente pregunta</button>
-          <div id="resultado-final" class="resultado" style="display:none;"></div>
-        </div>
-      </div>
-    </section>
-  </main>
+    <script>
+        (function() {
+            const html = document.documentElement;
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
 
-  <footer id="footer">
-    <p>🌱 Jardín filosófico · Hecho por Jhoan R. y Salomé C. · 8º GDEP 2026</p>
-  </footer>
+            function getPreferredTheme() {
+                const savedTheme = localStorage.getItem('epicuro-theme');
+                if (savedTheme) {
+                    return savedTheme;
+                }
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    return 'dark';
+                }
+                return 'light';
+            }
 
-  <script>
-    (function() {
-      // ===== MODO OSCURO =====
-      const html = document.documentElement;
-      const themeToggle = document.getElementById('themeToggle');
-      const themeIcon = document.getElementById('themeIcon');
+            function applyTheme(theme) {
+                html.setAttribute('data-theme', theme);
+                if (theme === 'dark') {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                } else {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            }
 
-      function getPreferredTheme() {
-        const savedTheme = localStorage.getItem('epicuro-theme');
-        if (savedTheme) {
-          return savedTheme;
-        }
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          return 'dark';
-        }
-        return 'light';
-      }
+            function toggleTheme() {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(newTheme);
+                localStorage.setItem('epicuro-theme', newTheme);
+            }
 
-      function applyTheme(theme) {
-        html.setAttribute('data-theme', theme);
-        if (theme === 'dark') {
-          themeIcon.classList.remove('fa-moon');
-          themeIcon.classList.add('fa-sun');
-        } else {
-          themeIcon.classList.remove('fa-sun');
-          themeIcon.classList.add('fa-moon');
-        }
-      }
+            const initialTheme = getPreferredTheme();
+            applyTheme(initialTheme);
 
-      function toggleTheme() {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        applyTheme(newTheme);
-        localStorage.setItem('epicuro-theme', newTheme);
-      }
+            themeToggle.addEventListener('click', toggleTheme);
 
-      // Inicializar tema
-      const initialTheme = getPreferredTheme();
-      applyTheme(initialTheme);
+            if (window.matchMedia) {
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                    if (!localStorage.getItem('epicuro-theme')) {
+                        applyTheme(e.matches ? 'dark' : 'light');
+                    }
+                });
+            }
 
-      themeToggle.addEventListener('click', toggleTheme);
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
 
-      if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-          if (!localStorage.getItem('epicuro-theme')) {
-            applyTheme(e.matches ? 'dark' : 'light');
-          }
-        });
-      }
+            const draggables = document.querySelectorAll('.draggable');
+            const dropZones = document.querySelectorAll('.drop-zone');
+            let draggedItem = null;
 
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if(target) target.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
+            draggables.forEach(d => {
+                d.addEventListener('dragstart', e => {
+                    draggedItem = d;
+                    e.dataTransfer.setData('text/plain', d.id);
+                    setTimeout(() => d.style.opacity = '0.4', 0);
+                });
+                d.addEventListener('dragend', e => {
+                    d.style.opacity = '1';
+                    draggedItem = null;
+                    dropZones.forEach(zone => zone.classList.remove('drag-over'));
+                });
+            });
 
-      // Drag & Drop deseos
-      const draggables = document.querySelectorAll('.draggable');
-      const dropZones = document.querySelectorAll('.drop-zone');
-      let draggedItem = null;
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', e => {
+                    e.preventDefault();
+                    zone.classList.add('drag-over');
+                });
+                zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+                zone.addEventListener('drop', e => {
+                    e.preventDefault();
+                    zone.classList.remove('drag-over');
+                    if (draggedItem) {
+                        zone.appendChild(draggedItem);
+                        draggedItem.style.opacity = '1';
+                        draggedItem = null;
+                    }
+                });
+            });
 
-      draggables.forEach(d => {
-        d.addEventListener('dragstart', e => {
-          draggedItem = d;
-          e.dataTransfer.setData('text/plain', d.id);
-          setTimeout(() => d.style.opacity = '0.4', 0);
-        });
-        d.addEventListener('dragend', e => {
-          d.style.opacity = '1';
-          draggedItem = null;
-          dropZones.forEach(zone => zone.classList.remove('drag-over'));
-        });
-      });
+            const itemsContainer = document.getElementById('items-container');
+            itemsContainer.addEventListener('dragover', e => e.preventDefault());
+            itemsContainer.addEventListener('drop', e => {
+                e.preventDefault();
+                if (draggedItem) {
+                    itemsContainer.appendChild(draggedItem);
+                    draggedItem.style.opacity = '1';
+                    draggedItem = null;
+                }
+            });
 
-      dropZones.forEach(zone => {
-        zone.addEventListener('dragover', e => {
-          e.preventDefault();
-          zone.classList.add('drag-over');
-        });
-        zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
-        zone.addEventListener('drop', e => {
-          e.preventDefault();
-          zone.classList.remove('drag-over');
-          if(draggedItem) {
-            zone.appendChild(draggedItem);
-            draggedItem.style.opacity = '1';
-            draggedItem = null;
-          }
-        });
-      });
+            document.getElementById('verificar-deseos').addEventListener('click', () => {
+                let correctos = 0;
+                let total = draggables.length;
+                dropZones.forEach(zone => {
+                    const accept = zone.dataset.accept;
+                    const children = zone.querySelectorAll('.draggable');
+                    children.forEach(child => {
+                        if (child.dataset.correct === accept) correctos++;
+                    });
+                });
+                const feedback = document.getElementById('feedback-deseos');
+                if (correctos === total) {
+                    feedback.innerHTML = '✅ ¡Perfecto! Has comprendido la clasificación epicúrea.';
+                    feedback.style.color = 'var(--verde-oliva)';
+                } else {
+                    feedback.innerHTML = `⚠️ Tienes ${correctos} de ${total} correctos. Revisa las categorías.`;
+                    feedback.style.color = 'var(--terracota)';
+                }
+            });
 
-      const itemsContainer = document.getElementById('items-container');
-      itemsContainer.addEventListener('dragover', e => e.preventDefault());
-      itemsContainer.addEventListener('drop', e => {
-        e.preventDefault();
-        if(draggedItem) {
-          itemsContainer.appendChild(draggedItem);
-          draggedItem.style.opacity = '1';
-          draggedItem = null;
-        }
-      });
+            const preguntas = [
+                { pregunta: "Según Epicuro, la muerte...", opciones: ["Es un paso a otra vida", "Debe ser temida por su misterio",
+                        "No es nada para nosotros porque no podemos experimentarla", "Es el fin de toda felicidad"
+                    ], correcta: 2 },
+                { pregunta: "El placer epicúreo se define mejor como:", opciones: ["Indulgencia en todos los deseos",
+                        "Ausencia de dolor y perturbación", "Riqueza y poder", "Placeres intensos pero breves"
+                    ], correcta: 1 },
+                { pregunta: "¿Qué son la aponía y la ataraxia?", opciones: ["Dos dioses griegos",
+                        "Ausencia de dolor físico y tranquilidad del alma", "Tipos de deseos naturales", "Métodos de estudio"
+                    ], correcta: 1 },
+                { pregunta: "¿Cómo consideraba Epicuro a los dioses?", opciones: ["Inexistentes",
+                        "Seres que castigan a los humanos", "Existen pero no intervienen en asuntos humanos",
+                        "Hay que adorarlos para ser felices"
+                    ], correcta: 2 },
+                { pregunta: "El mayor bien que procura la sabiduría según Epicuro es:", opciones: ["La riqueza", "La salud",
+                        "La amistad", "El conocimiento"
+                    ], correcta: 2 }
+            ];
 
-      document.getElementById('verificar-deseos').addEventListener('click', () => {
-        let correctos = 0;
-        let total = draggables.length;
-        dropZones.forEach(zone => {
-          const accept = zone.dataset.accept;
-          const children = zone.querySelectorAll('.draggable');
-          children.forEach(child => {
-            if(child.dataset.correct === accept) correctos++;
-          });
-        });
-        const feedback = document.getElementById('feedback-deseos');
-        if(correctos === total) {
-          feedback.innerHTML = '✅ ¡Perfecto! Has comprendido la clasificación epicúrea.';
-          feedback.style.color = 'var(--verde-oliva)';
-        } else {
-          feedback.innerHTML = `⚠️ Tienes ${correctos} de ${total} correctos. Revisa las categorías.`;
-          feedback.style.color = 'var(--terracota)';
-        }
-      });
+            let preguntaActual = 0;
+            let respuestasUsuario = new Array(preguntas.length).fill(null);
+            const preguntaContainer = document.getElementById('pregunta-container');
+            const siguienteBtn = document.getElementById('siguiente-btn');
+            const resultadoFinal = document.getElementById('resultado-final');
 
-      // Quiz
-      const preguntas = [
-        { pregunta: "Según Epicuro, la muerte...", opciones: ["Es un paso a otra vida", "Debe ser temida por su misterio", "No es nada para nosotros porque no podemos experimentarla", "Es el fin de toda felicidad"], correcta: 2 },
-        { pregunta: "El placer epicúreo se define mejor como:", opciones: ["Indulgencia en todos los deseos", "Ausencia de dolor y perturbación", "Riqueza y poder", "Placeres intensos pero breves"], correcta: 1 },
-        { pregunta: "¿Qué son la aponía y la ataraxia?", opciones: ["Dos dioses griegos", "Ausencia de dolor físico y tranquilidad del alma", "Tipos de deseos naturales", "Métodos de estudio"], correcta: 1 },
-        { pregunta: "¿Cómo consideraba Epicuro a los dioses?", opciones: ["Inexistentes", "Seres que castigan a los humanos", "Existen pero no intervienen en asuntos humanos", "Hay que adorarlos para ser felices"], correcta: 2 },
-        { pregunta: "El mayor bien que procura la sabiduría según Epicuro es:", opciones: ["La riqueza", "La salud", "La amistad", "El conocimiento"], correcta: 2 }
-      ];
+            function mostrarPregunta(indice) {
+                if (indice >= preguntas.length) { mostrarResultado(); return; }
+                const q = preguntas[indice];
+                let html = `<p class="quiz-question">${indice+1}. ${q.pregunta}</p>`;
+                q.opciones.forEach((op, i) => {
+                    html +=
+                        `<label class="quiz-option"><input type="radio" name="quiz" value="${i}" ${respuestasUsuario[indice] == i ? 'checked' : ''}> ${op}</label>`;
+                });
+                preguntaContainer.innerHTML = html;
+                siguienteBtn.style.display = 'inline-block';
+                siguienteBtn.textContent = (indice === preguntas.length - 1) ? 'Ver resultado' : 'Siguiente pregunta';
+                document.querySelectorAll('input[name="quiz"]').forEach(radio => {
+                    radio.addEventListener('change', (e) => { respuestasUsuario[indice] = parseInt(e.target
+                            .value); });
+                });
+                if (respuestasUsuario[indice] !== null) {
+                    const radio = document.querySelector(
+                        `input[name="quiz"][value="${respuestasUsuario[indice]}"]`);
+                    if (radio) radio.checked = true;
+                }
+            }
 
-      let preguntaActual = 0;
-      let respuestasUsuario = new Array(preguntas.length).fill(null);
-      const preguntaContainer = document.getElementById('pregunta-container');
-      const siguienteBtn = document.getElementById('siguiente-btn');
-      const resultadoFinal = document.getElementById('resultado-final');
+            function mostrarResultado() {
+                let aciertos = 0;
+                preguntas.forEach((q, idx) => { if (respuestasUsuario[idx] === q.correcta) aciertos++; });
+                let perfil = aciertos === 5 ? '🏛️ Sabio del Jardín' : (aciertos >= 3 ? '🍃 En busca de la ataraxia' :
+                    '🤔 Hedonista confundido');
+                preguntaContainer.innerHTML = '';
+                siguienteBtn.style.display = 'none';
+                resultadoFinal.style.display = 'block';
+                resultadoFinal.innerHTML =
+                    `<strong>${perfil}</strong><br>Has acertado ${aciertos} de ${preguntas.length}.`;
+            }
 
-      function mostrarPregunta(indice) {
-        if(indice >= preguntas.length) { mostrarResultado(); return; }
-        const q = preguntas[indice];
-        let html = `<p class="quiz-question">${indice+1}. ${q.pregunta}</p>`;
-        q.opciones.forEach((op, i) => {
-          html += `<label class="quiz-option"><input type="radio" name="quiz" value="${i}" ${respuestasUsuario[indice] == i ? 'checked' : ''}> ${op}</label>`;
-        });
-        preguntaContainer.innerHTML = html;
-        siguienteBtn.style.display = 'inline-block';
-        siguienteBtn.textContent = (indice === preguntas.length-1) ? 'Ver resultado' : 'Siguiente pregunta';
-        document.querySelectorAll('input[name="quiz"]').forEach(radio => {
-          radio.addEventListener('change', (e) => { respuestasUsuario[indice] = parseInt(e.target.value); });
-        });
-        if(respuestasUsuario[indice] !== null) {
-          const radio = document.querySelector(`input[name="quiz"][value="${respuestasUsuario[indice]}"]`);
-          if(radio) radio.checked = true;
-        }
-      }
+            siguienteBtn.addEventListener('click', () => {
+                const seleccionado = document.querySelector('input[name="quiz"]:checked');
+                if (!seleccionado) { alert('Por favor selecciona una opción.'); return; }
+                respuestasUsuario[preguntaActual] = parseInt(seleccionado.value);
+                preguntaActual++;
+                mostrarPregunta(preguntaActual);
+            });
 
-      function mostrarResultado() {
-        let aciertos = 0;
-        preguntas.forEach((q, idx) => { if(respuestasUsuario[idx] === q.correcta) aciertos++; });
-        let perfil = aciertos === 5 ? '🏛️ Sabio del Jardín' : (aciertos >= 3 ? '🍃 En busca de la ataraxia' : '🤔 Hedonista confundido');
-        preguntaContainer.innerHTML = '';
-        siguienteBtn.style.display = 'none';
-        resultadoFinal.style.display = 'block';
-        resultadoFinal.innerHTML = `<strong>${perfil}</strong><br>Has acertado ${aciertos} de ${preguntas.length}.`;
-      }
-
-      siguienteBtn.addEventListener('click', () => {
-        const seleccionado = document.querySelector('input[name="quiz"]:checked');
-        if(!seleccionado) { alert('Por favor selecciona una opción.'); return; }
-        respuestasUsuario[preguntaActual] = parseInt(seleccionado.value);
-        preguntaActual++;
-        mostrarPregunta(preguntaActual);
-      });
-
-      mostrarPregunta(0);
-
-      // Huevo de pascua: efecto temblor al hacer clic en "verdadero"
-      const verdad = document.getElementById("verdad");
-      if (verdad) {
-        verdad.addEventListener("click", () => {
-          document.body.classList.add("temblor");
-          setTimeout(() => {
-            document.body.classList.remove("temblor");
-          }, 300);
-        });
-      }
-    
-      // Huevo de pascua: descubre la verdad
-      document.getElementById("trigger-verdad").addEventListener("click", () => {
-        const footer = document.getElementById("footer");
-        footer.innerHTML = `<p>🌱 Jardín filosófico · Hecho por Jhoan R. <s>y Salomé C.</s> · 8º GDEP 2026</p>`;
-        console.log("🧠 Has descubierto la verdad.");
-        console.log("Proyecto realizado por Jhoan Rojas. Colaboración del equipo no reflejada en el desarrollo final.");
-      });
-    })();
-  </script>
+            mostrarPregunta(0);
+        })();
+    </script>
 </body>
 </html>
