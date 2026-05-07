@@ -592,6 +592,29 @@
             outline-offset: 3px;
             border-radius: 50%;
         }
+
+        /* Estilos para enlaces (excluyendo botones) */
+a:not(.btn):not(.btn-outline):link {
+    color: var(--verde-oliva);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:not(.btn):not(.btn-outline):visited {
+    color: var(--terracota);
+}
+
+a:not(.btn):not(.btn-outline):hover,
+a:not(.btn):not(.btn-outline):focus {
+    color: var(--terracota);
+    text-decoration: underline;
+}
+
+/* Opcional: mantener el estilo del navbar sin interferencias */
+.nav-links a:not(.btn):not(.btn-outline):link,
+.nav-links a:not(.btn):not(.btn-outline):visited {
+    /* El navbar ya tiene su propio color base, pero si quieres que herede estos colores, elimina esta regla */
+}
     </style>
 </head>
 <body>
