@@ -1,4 +1,4 @@
-
+(function() {
     // ---------- TEMA OSCURO ----------
     const html = document.documentElement;
     const themeToggleDesktop = document.getElementById('themeToggle');
@@ -31,7 +31,7 @@
     }
 
     applyTheme(getPreferredTheme());
-    themeToggleDesktop.addEventListener('click', toggleTheme);
+    if (themeToggleDesktop) themeToggleDesktop.addEventListener('click', toggleTheme);
     if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
         if (!localStorage.getItem('epicuro-theme')) applyTheme(e.matches ? 'dark' : 'light');
@@ -44,6 +44,7 @@
     const menuIcon = document.getElementById('menuIcon');
 
     function openMenu() {
+        if (!navLinks || !overlay || !menuIcon) return;
         navLinks.classList.add('active');
         overlay.classList.add('active');
         menuIcon.className = 'fas fa-times';
@@ -51,28 +52,35 @@
     }
 
     function closeMenu() {
+        if (!navLinks || !overlay || !menuIcon) return;
         navLinks.classList.remove('active');
         overlay.classList.remove('active');
         menuIcon.className = 'fas fa-bars';
         document.body.style.overflow = '';
     }
 
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.contains('active') ? closeMenu() : openMenu();
-    });
-    overlay.addEventListener('click', closeMenu);
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-        if (navLinks.classList.contains('active')) closeMenu();
-    }));
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            if (!navLinks) return;
+            navLinks.classList.contains('active') ? closeMenu() : openMenu();
+        });
+    }
+    if (overlay) overlay.addEventListener('click', closeMenu);
+    if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) closeMenu();
+        }));
+    }
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && navLinks.classList.contains('active')) closeMenu();
+        if (e.key === 'Escape' && navLinks && navLinks.classList.contains('active')) closeMenu();
     });
 
     // Ajustar visibilidad de botones de tema
     function adjustThemeToggleVisibility() {
+        if (!themeToggleDesktop || !themeToggleMobile) return;
         const mobile = window.innerWidth <= 900;
         themeToggleDesktop.style.display = mobile ? 'none' : 'flex';
-        if (themeToggleMobile) themeToggleMobile.style.display = mobile ? 'flex' : 'none';
+        themeToggleMobile.style.display = mobile ? 'flex' : 'none';
     }
     adjustThemeToggleVisibility();
     window.addEventListener('resize', adjustThemeToggleVisibility);
@@ -173,7 +181,7 @@
         if (!musicNodes) {
             musicNodes = createZenAmbient();
         }
-        if (musicNodes && audioCtx.state === 'running') {
+        if (musicNodes && audioCtx && audioCtx.state === 'running') {
             musicNodes.masterGain.gain.linearRampToValueAtTime(0.08, audioCtx.currentTime + 1);
             musicPlaying = true;
             updateMusicButton();
@@ -190,27 +198,32 @@
 
     function updateMusicButton() {
         const btn = document.getElementById('musicToggle');
+        if (!btn) return;
         const span = btn.querySelector('span');
         const icon = btn.querySelector('i');
-        if (musicPlaying) {
-            span.textContent = 'Pausar Música';
-            icon.className = 'fas fa-volume-up';
-        } else {
-            span.textContent = 'Música Zen';
-            icon.className = 'fas fa-music';
+        if (span && icon) {
+            if (musicPlaying) {
+                span.textContent = 'Pausar Música';
+                icon.className = 'fas fa-volume-up';
+            } else {
+                span.textContent = 'Música Zen';
+                icon.className = 'fas fa-music';
+            }
         }
     }
 
     const musicToggleBtn = document.getElementById('musicToggle');
-    musicToggleBtn.addEventListener('click', () => {
-        if (musicPlaying) {
-            stopMusic();
-        } else {
-            startMusic();
-        }
-        initAudioContext();
-        playSoftClick(1000, 0.08);
-    });
+    if (musicToggleBtn) {
+        musicToggleBtn.addEventListener('click', () => {
+            if (musicPlaying) {
+                stopMusic();
+            } else {
+                startMusic();
+            }
+            initAudioContext();
+            playSoftClick(1000, 0.08);
+        });
+    }
 
     // ---------- EFECTOS DE SONIDO GLOBALES ----------
     function addSoundToFlipCards() {
@@ -280,15 +293,17 @@
         });
     });
 
-    itemsContainer.addEventListener('dragover', e => e.preventDefault());
-    itemsContainer.addEventListener('drop', e => {
-        e.preventDefault();
-        if (draggedItem) {
-            itemsContainer.appendChild(draggedItem);
-            draggedItem.style.opacity = '1';
-            draggedItem = null;
-        }
-    });
+    if (itemsContainer) {
+        itemsContainer.addEventListener('dragover', e => e.preventDefault());
+        itemsContainer.addEventListener('drop', e => {
+            e.preventDefault();
+            if (draggedItem) {
+                itemsContainer.appendChild(draggedItem);
+                draggedItem.style.opacity = '1';
+                draggedItem = null;
+            }
+        });
+    }
 
     function handleTouchStart(e) {
         if (draggedItem) return;
@@ -345,13 +360,15 @@
 
         if (touchHasMoved) {
             const touch = e.changedTouches[0];
-            const elemBelow = document.elementFromPoint(touch.clientX, touch.clientY);
-            if (elemBelow) {
-                const zone = elemBelow.closest('.drop-zone');
-                if (zone) {
-                    zone.appendChild(touchDragItem);
-                } else if (elemBelow.closest('#items-container')) {
-                    itemsContainer.appendChild(touchDragItem);
+            if (touch) {  // <-- FIX: comprobar que existe
+                const elemBelow = document.elementFromPoint(touch.clientX, touch.clientY);
+                if (elemBelow) {
+                    const zone = elemBelow.closest('.drop-zone');
+                    if (zone) {
+                        zone.appendChild(touchDragItem);
+                    } else if (itemsContainer && elemBelow.closest('#items-container')) {
+                        itemsContainer.appendChild(touchDragItem);
+                    }
                 }
             }
         }
@@ -374,24 +391,29 @@
     }
 
     // Verificar clasificación
-    document.getElementById('verificar-deseos').addEventListener('click', () => {
-        let correctos = 0;
-        const total = draggables.length;
-        dropZones.forEach(zone => {
-            const accept = zone.dataset.accept;
-            zone.querySelectorAll('.draggable').forEach(child => {
-                if (child.dataset.correct === accept) correctos++;
+    const verificarBtn = document.getElementById('verificar-deseos');
+    if (verificarBtn) {
+        verificarBtn.addEventListener('click', () => {
+            let correctos = 0;
+            const total = draggables.length;
+            dropZones.forEach(zone => {
+                const accept = zone.dataset.accept;
+                zone.querySelectorAll('.draggable').forEach(child => {
+                    if (child.dataset.correct === accept) correctos++;
+                });
             });
+            const feedback = document.getElementById('feedback-deseos');
+            if (feedback) {
+                if (correctos === total) {
+                    feedback.innerHTML = '✅ ¡Perfecto! Has comprendido la clasificación epicúrea.';
+                    feedback.style.color = 'var(--verde-oliva)';
+                } else {
+                    feedback.innerHTML = `⚠️ Tienes ${correctos} de ${total} correctos. Revisa las categorías.`;
+                    feedback.style.color = 'var(--terracota)';
+                }
+            }
         });
-        const feedback = document.getElementById('feedback-deseos');
-        if (correctos === total) {
-            feedback.innerHTML = '✅ ¡Perfecto! Has comprendido la clasificación epicúrea.';
-            feedback.style.color = 'var(--verde-oliva)';
-        } else {
-            feedback.innerHTML = `⚠️ Tienes ${correctos} de ${total} correctos. Revisa las categorías.`;
-            feedback.style.color = 'var(--terracota)';
-        }
-    });
+    }
 
     // ---------- TEST ----------
     const preguntas = [
@@ -409,6 +431,7 @@
     const resultadoFinal = document.getElementById('resultado-final');
 
     function mostrarPregunta(indice) {
+        if (!preguntaContainer || !siguienteBtn) return;
         if (indice >= preguntas.length) { mostrarResultado(); return; }
         const q = preguntas[indice];
         let html = `<p class="quiz-question">${indice+1}. ${q.pregunta}</p>`;
@@ -428,6 +451,7 @@
     }
 
     function mostrarResultado() {
+        if (!preguntaContainer || !siguienteBtn || !resultadoFinal) return;
         let aciertos = 0;
         preguntas.forEach((q, idx) => { if (respuestasUsuario[idx] === q.correcta) aciertos++; });
         let perfil = aciertos === 5 ? '🏛️ Sabio del Jardín' : (aciertos >= 3 ? '🍃 En busca de la ataraxia' : '🤔 Hedonista confundido');
@@ -437,16 +461,22 @@
         resultadoFinal.innerHTML = `<strong>${perfil}</strong><br>Has acertado ${aciertos} de ${preguntas.length}.`;
     }
 
-    siguienteBtn.addEventListener('click', () => {
-        const seleccionado = document.querySelector('input[name="quiz"]:checked');
-        if (!seleccionado) {
-            alert('Por favor selecciona una opción.');
-            return;
-        }
-        respuestasUsuario[preguntaActual] = parseInt(seleccionado.value);
-        preguntaActual++;
-        mostrarPregunta(preguntaActual);
-    });
+    if (siguienteBtn) {
+        siguienteBtn.addEventListener('click', () => {
+            const seleccionado = document.querySelector('input[name="quiz"]:checked');
+            if (!seleccionado) {
+                alert('Por favor selecciona una opción.');
+                return;
+            }
+            respuestasUsuario[preguntaActual] = parseInt(seleccionado.value);
+            preguntaActual++;
+            mostrarPregunta(preguntaActual);
+        });
+    }
 
-    mostrarPregunta(0);
+    // Iniciar test mostrando la primera pregunta (elementos ya existen)
+    if (preguntaContainer && siguienteBtn && resultadoFinal) {
+        mostrarPregunta(0);
+    }
+
 })();
