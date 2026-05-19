@@ -1,7 +1,7 @@
 # 🌿 Epicuro – Filosofía para la felicidad
 
 Página web interactiva dedicada a la vida, obra y pensamiento de Epicuro.  
-Diseñada para facilitar el aprendizaje mediante una navegación clara y elementos lúdicos, basada exclusivamente en el documento **Epicuro.pdf**.
+Diseñada para facilitar el aprendizaje mediante una navegación clara y elementos lúdicos, basada exclusivamente en el documento **Epicuro de Samos.pdf**.
 
 ## ✨ Características principales
 
@@ -26,13 +26,13 @@ Diseñada para facilitar el aprendizaje mediante una navegación clara y element
 
 - HTML5 semántico
 - CSS3 (variables, flexbox, grid, animaciones, diseño responsivo)
-- JavaScript vanilla (sin frameworks) para drag & drop, quiz, flip cards y navegación
+- JavaScript (sin frameworks) para drag & drop, quiz, flip cards y navegación
 - [Google Fonts](https://fonts.google.com/) (Lora, Open Sans)
 - [Font Awesome 6](https://fontawesome.com/) (iconos)
 
 ## 🚀 Cómo usar
 
-1. [Abre la pagina Web](https://yacalox.github.io/epicuro-de-samos/main.html) o descarga `main.html`.
+1. [Abre la pagina Web](https://yacalox.github.io/epicuro-de-samos/main.html) o descarga el proyecto completo.
 2. Abre `index.html` en cualquier navegador moderno.
 3. No requiere instalación ni dependencias externas (todo se carga desde CDN).
 
