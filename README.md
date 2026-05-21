@@ -52,7 +52,7 @@ Diseñada para facilitar el aprendizaje mediante una navegación clara y element
 | Test           | Quiz interactivo de 5 preguntas con perfil final |
 | Juego          | Juego interactivo, basado en puntuación con 24 preguntas diferentes* |
 
-* El juego interactivo está hosteado en un sitio WEB aparte
+(*) El juego interactivo está hosteado en un sitio WEB aparte
 
 ## 📖 Créditos
 
