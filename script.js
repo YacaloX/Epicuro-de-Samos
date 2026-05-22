@@ -94,10 +94,95 @@
         });
     });
 
-    // ---------- SISTEMA DE AUDIO ZEN ----------
+    // ---------- REPRODUCTOR DE MÚSICA DE FONDO DESDE YOUTUBE ----------
+    const videoId = 'mj_0KoleZiU'; // ⬅️ Cambia este ID por el de tu video/lista de reproducción
+    let ytPlayer = null;
+    let ytPlaying = false;
+    const musicToggleBtn = document.getElementById('musicToggle');
+
+    // Silenciar el <audio> original (por si acaso)
+    const bgAudio = document.getElementById('bgMusic');
+    if (bgAudio) {
+        bgAudio.volume = 0;
+        bgAudio.pause();
+    }
+
+    // Crear el contenedor invisible para YouTube si no existe
+    let ytContainer = document.getElementById('yt-player');
+    if (!ytContainer) {
+        ytContainer = document.createElement('div');
+        ytContainer.id = 'yt-player';
+        ytContainer.style.cssText = 'position:fixed; width:1px; height:1px; overflow:hidden; opacity:0.01; pointer-events:none;';
+        document.body.appendChild(ytContainer);
+    }
+
+    function onYouTubeIframeAPIReady() {
+        ytPlayer = new YT.Player('yt-player', {
+            videoId: videoId,
+            playerVars: {
+                autoplay: 0,
+                controls: 0,
+                modestbranding: 1,
+                loop: 1,
+                playlist: videoId,
+                enablejsapi: 1,
+                mute: 1          // Comienza muteado (política de autoplay)
+            },
+            events: {
+                onReady: function() {
+                    // El botón ya está listo para usarse
+                }
+            }
+        });
+    }
+
+    // Cargar la API de YouTube si no está ya cargada
+    if (!window.YT) {
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    } else if (window.YT && window.YT.Player) {
+        onYouTubeIframeAPIReady();
+    }
+
+    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+
+    function updateMusicButtonState(playing) {
+        if (!musicToggleBtn) return;
+        const span = musicToggleBtn.querySelector('span');
+        const icon = musicToggleBtn.querySelector('i');
+        if (span && icon) {
+            if (playing) {
+                span.textContent = 'Pausar Música';
+                icon.className = 'fas fa-volume-up';
+            } else {
+                span.textContent = 'Música Zen';
+                icon.className = 'fas fa-music';
+            }
+        }
+    }
+
+    if (musicToggleBtn) {
+        musicToggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (!ytPlayer || !ytPlayer.unMute) return;  // El reproductor aún no está listo
+
+            if (ytPlaying) {
+                ytPlayer.pauseVideo();
+                ytPlaying = false;
+                updateMusicButtonState(false);
+            } else {
+                ytPlayer.unMute();       // Quitar el mute (necesario tras el clic)
+                ytPlayer.playVideo();
+                ytPlaying = true;
+                updateMusicButtonState(true);
+            }
+        });
+    }
+
+    // ---------- EFECTOS DE SONIDO (clics, flips) ----------
     let audioCtx = null;
-    let musicNodes = null;
-    let musicPlaying = false;
 
     function initAudioContext() {
         if (!audioCtx) {
@@ -137,95 +222,6 @@
         osc.stop(now + 0.15);
     }
 
-    function createZenAmbient() {
-        if (!audioCtx) return null;
-        const now = audioCtx.currentTime;
-        const masterGain = audioCtx.createGain();
-        masterGain.gain.setValueAtTime(0, now);
-        masterGain.gain.linearRampToValueAtTime(0.08, now + 2);
-
-        const osc1 = audioCtx.createOscillator();
-        osc1.type = 'sine';
-        osc1.frequency.value = 110;
-
-        const osc2 = audioCtx.createOscillator();
-        osc2.type = 'sine';
-        osc2.frequency.value = 111;
-
-        const filter = audioCtx.createBiquadFilter();
-        filter.type = 'lowpass';
-        filter.frequency.value = 400;
-        filter.Q.value = 0.5;
-
-        const lfo = audioCtx.createOscillator();
-        lfo.type = 'sine';
-        lfo.frequency.value = 0.2;
-        const lfoGain = audioCtx.createGain();
-        lfoGain.gain.value = 0.03;
-        lfo.connect(lfoGain).connect(masterGain.gain);
-
-        osc1.connect(filter);
-        osc2.connect(filter);
-        filter.connect(masterGain);
-        masterGain.connect(audioCtx.destination);
-
-        osc1.start(now);
-        osc2.start(now);
-        lfo.start(now);
-
-        return { osc1, osc2, lfo, filter, masterGain, lfoGain };
-    }
-
-    function startMusic() {
-        initAudioContext();
-        if (!musicNodes) {
-            musicNodes = createZenAmbient();
-        }
-        if (musicNodes && audioCtx && audioCtx.state === 'running') {
-            musicNodes.masterGain.gain.linearRampToValueAtTime(0.08, audioCtx.currentTime + 1);
-            musicPlaying = true;
-            updateMusicButton();
-        }
-    }
-
-    function stopMusic() {
-        if (musicNodes && audioCtx) {
-            musicNodes.masterGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1);
-            musicPlaying = false;
-            updateMusicButton();
-        }
-    }
-
-    function updateMusicButton() {
-        const btn = document.getElementById('musicToggle');
-        if (!btn) return;
-        const span = btn.querySelector('span');
-        const icon = btn.querySelector('i');
-        if (span && icon) {
-            if (musicPlaying) {
-                span.textContent = 'Pausar Música';
-                icon.className = 'fas fa-volume-up';
-            } else {
-                span.textContent = 'Música Zen';
-                icon.className = 'fas fa-music';
-            }
-        }
-    }
-
-    const musicToggleBtn = document.getElementById('musicToggle');
-    if (musicToggleBtn) {
-        musicToggleBtn.addEventListener('click', () => {
-            if (musicPlaying) {
-                stopMusic();
-            } else {
-                startMusic();
-            }
-            initAudioContext();
-            playSoftClick(1000, 0.08);
-        });
-    }
-
-    // ---------- EFECTOS DE SONIDO GLOBALES ----------
     function addSoundToFlipCards() {
         document.querySelectorAll('.flip-card').forEach(card => {
             card.addEventListener('click', function() {
@@ -360,7 +356,7 @@
 
         if (touchHasMoved) {
             const touch = e.changedTouches[0];
-            if (touch) {  // <-- FIX: comprobar que existe
+            if (touch) {
                 const elemBelow = document.elementFromPoint(touch.clientX, touch.clientY);
                 if (elemBelow) {
                     const zone = elemBelow.closest('.drop-zone');
