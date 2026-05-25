@@ -94,11 +94,20 @@
         });
     });
 
-    // ---------- REPRODUCTOR DE MÚSICA DE FONDO DESDE YOUTUBE ----------
-    const videoId = 'mj_0KoleZiU'; // ⬅️ Cambia este ID por el de tu video/lista de reproducción
+    // ---------- REPRODUCTOR DE MÚSICA DE FONDO CON FADE IN/OUT ----------
+    const videoId = 'PLSs1WR-lAB1-p7Qt7365I0AkaZxkhnZI_'; // ⬅️ Cambia este ID por el de tu video/lista de reproducción
     let ytPlayer = null;
     let ytPlaying = false;
     const musicToggleBtn = document.getElementById('musicToggle');
+
+    // Configuración de fade
+    const FADE_DURATION_MS = 1000;   // Duración del fundido (1 segundo)
+    const DEFAULT_VOLUME = 40;       // Volumen final (0-100), ajustable
+
+    // Variables para el fade
+    let currentVolume = 0;           // volumen actual en el reproductor
+    let currentFadeAnimation = null; // requestAnimationFrame activo
+    let fadeCompleteCallback = null;  // callback al terminar un fade
 
     // Silenciar el <audio> original (por si acaso)
     const bgAudio = document.getElementById('bgMusic');
@@ -130,7 +139,11 @@
             },
             events: {
                 onReady: function() {
-                    // El botón ya está listo para usarse
+                    // Establecer volumen inicial a 0 para evitar saltos
+                    if (ytPlayer && ytPlayer.setVolume) {
+                        ytPlayer.setVolume(0);
+                        currentVolume = 0;
+                    }
                 }
             }
         });
@@ -163,18 +176,88 @@
         }
     }
 
+    // Detiene cualquier animación de volumen en curso
+    function stopCurrentFade() {
+        if (currentFadeAnimation) {
+            cancelAnimationFrame(currentFadeAnimation);
+            currentFadeAnimation = null;
+        }
+        fadeCompleteCallback = null;
+    }
+
+    // Realiza una transición suave de volumen desde currentVolume hasta targetVolume
+    // en 'duration' milisegundos, luego ejecuta onComplete (opcional)
+    function setVolumeSmooth(targetVolume, duration, onComplete) {
+        stopCurrentFade();
+        const startVolume = currentVolume;
+        const startTime = performance.now();
+        const endTime = startTime + duration;
+
+        function updateVolume(now) {
+            const elapsed = now - startTime;
+            let newVolume;
+            if (elapsed >= duration) {
+                newVolume = targetVolume;
+                if (ytPlayer && ytPlayer.setVolume) ytPlayer.setVolume(newVolume);
+                currentVolume = newVolume;
+                currentFadeAnimation = null;
+                if (onComplete) onComplete();
+                return;
+            }
+            const t = elapsed / duration; // 0 -> 1
+            // easing lineal
+            newVolume = startVolume + (targetVolume - startVolume) * t;
+            if (ytPlayer && ytPlayer.setVolume) ytPlayer.setVolume(Math.round(newVolume));
+            currentVolume = newVolume;
+            currentFadeAnimation = requestAnimationFrame(updateVolume);
+        }
+        currentFadeAnimation = requestAnimationFrame(updateVolume);
+    }
+
+    function fadeIn() {
+        if (!ytPlayer || !ytPlayer.unMute) return;
+        stopCurrentFade();
+        // Si ya está sonando y el volumen es mayor que 0, no hacer nada
+        if (ytPlaying && currentVolume >= DEFAULT_VOLUME - 1) return;
+
+        // Asegurar que el video esté reproduciéndose y sin mute
+        ytPlayer.unMute();
+        ytPlayer.playVideo();
+
+        // Forzar volumen a 0 para empezar el fade desde silencio
+        ytPlayer.setVolume(0);
+        currentVolume = 0;
+
+        // Subir volumen gradualmente
+        setVolumeSmooth(DEFAULT_VOLUME, FADE_DURATION_MS, null);
+    }
+
+    function fadeOut() {
+        if (!ytPlayer) return;
+        stopCurrentFade();
+        if (!ytPlaying) return;
+
+        // Bajar volumen a 0 y luego pausar
+        setVolumeSmooth(0, FADE_DURATION_MS, () => {
+            if (ytPlayer && ytPlayer.pauseVideo) {
+                ytPlayer.pauseVideo();
+            }
+        });
+    }
+
     if (musicToggleBtn) {
         musicToggleBtn.addEventListener('click', function(e) {
             e.preventDefault();
             if (!ytPlayer || !ytPlayer.unMute) return;  // El reproductor aún no está listo
 
             if (ytPlaying) {
-                ytPlayer.pauseVideo();
+                // Pausar con fade out
+                fadeOut();
                 ytPlaying = false;
                 updateMusicButtonState(false);
             } else {
-                ytPlayer.unMute();       // Quitar el mute (necesario tras el clic)
-                ytPlayer.playVideo();
+                // Reproducir con fade in
+                fadeIn();
                 ytPlaying = true;
                 updateMusicButtonState(true);
             }
