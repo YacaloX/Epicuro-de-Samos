@@ -133,6 +133,7 @@
                 controls: 0,
                 modestbranding: 1,
                 loop: 1,
+                listType: 'playlist', 
                 playlist: videoId,
                 enablejsapi: 1,
                 mute: 1          // Comienza muteado (política de autoplay)
