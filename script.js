@@ -95,7 +95,7 @@
     });
 
     // ---------- REPRODUCTOR DE MÚSICA DE FONDO CON FADE IN/OUT ----------
-    const videoId = 'PLSs1WR-lAB1-p7Qt7365I0AkaZxkhnZI_'; // ⬅️ Cambia este ID por el de tu video/lista de reproducción
+    const videoId = 'PLSs1WR-lAB1-p7Qt7365I0AkaZxkhnZI'; // ⬅️ Cambia este ID por el de tu video/lista de reproducción
     let ytPlayer = null;
     let ytPlaying = false;
     const musicToggleBtn = document.getElementById('musicToggle');
