@@ -1084,3 +1084,12 @@ a:not(.btn):not(.btn-outline):focus {
         padding: 0.6rem 0.8rem;
     }
 }
+
+#yt-player {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
