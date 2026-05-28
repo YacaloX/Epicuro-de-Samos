@@ -138,7 +138,7 @@
                 mute: 1
             }
         });
-    },
+    }
             events: {
                 onReady: function() {
                     // Establecer volumen inicial a 0 para evitar saltos
