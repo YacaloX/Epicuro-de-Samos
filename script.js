@@ -125,6 +125,7 @@
         document.body.appendChild(ytContainer);
     }
 
+    // ⚠️ CORREGIDO: La función se cerraba antes de incluir el bloque events
     function onYouTubeIframeAPIReady() {
         ytPlayer = new YT.Player('yt-player', {
             playerVars: {
@@ -136,9 +137,7 @@
                 list: 'PLSs1WR-lAB1-p7Qt7365I0AkaZxkhnZI_', // ID de la playlist
                 enablejsapi: 1,
                 mute: 1
-            }
-        });
-    }
+            },
             events: {
                 onReady: function() {
                     // Establecer volumen inicial a 0 para evitar saltos
@@ -555,7 +554,7 @@
         });
     }
 
-    // Iniciar test mostrando la primera pregunta (elementos ya existen)
+    // Iniciar test mostrando la primera pregunta
     if (preguntaContainer && siguienteBtn && resultadoFinal) {
         mostrarPregunta(0);
     }
