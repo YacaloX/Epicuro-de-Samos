@@ -127,17 +127,18 @@
 
     function onYouTubeIframeAPIReady() {
         ytPlayer = new YT.Player('yt-player', {
-            videoId: videoId,
             playerVars: {
                 autoplay: 0,
                 controls: 0,
                 modestbranding: 1,
                 loop: 1,
-                listType: 'playlist', 
-                playlist: videoId,
+                listType: 'playlist',
+                list: 'PLSs1WR-lAB1-p7Qt7365I0AkaZxkhnZI', // ID de la playlist
                 enablejsapi: 1,
-                mute: 1          // Comienza muteado (política de autoplay)
-            },
+                mute: 1
+            }
+        });
+    },
             events: {
                 onReady: function() {
                     // Establecer volumen inicial a 0 para evitar saltos
